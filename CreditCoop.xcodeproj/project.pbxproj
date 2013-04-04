@@ -1,0 +1,756 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		37A437B0166BEB52006A51E3 /* Mogenerate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 37A437B1166BEB52006A51E3 /* Build configuration list for PBXAggregateTarget "Mogenerate" */;
+			buildPhases = (
+				37A437B4166BEB60006A51E3 /* Mogenerate */,
+			);
+			dependencies = (
+			);
+			name = Mogenerate;
+			productName = Mogenerate;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373B166BE850006A51E3 /* UIKit.framework */; };
+		37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373D166BE850006A51E3 /* Foundation.framework */; };
+		37A43740166BE850006A51E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373F166BE850006A51E3 /* CoreGraphics.framework */; };
+		37A43742166BE850006A51E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43741166BE850006A51E3 /* CoreData.framework */; };
+		37A43748166BE850006A51E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A43746166BE850006A51E3 /* InfoPlist.strings */; };
+		37A4374A166BE850006A51E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A43749166BE850006A51E3 /* main.m */; };
+		37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4374D166BE850006A51E3 /* AppDelegate.m */; };
+		37A43750166BE850006A51E3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A4374F166BE850006A51E3 /* Default.png */; };
+		37A43752166BE850006A51E3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A43751166BE850006A51E3 /* Default@2x.png */; };
+		37A43754166BE850006A51E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A43753166BE850006A51E3 /* Default-568h@2x.png */; };
+		37A43757166BE850006A51E3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A43755166BE850006A51E3 /* MainStoryboard.storyboard */; };
+		37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */; };
+		37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375C166BE850006A51E3 /* UserAccountsVC.m */; };
+		37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375F166BE850006A51E3 /* AccountOperationsVC.m */; };
+		37A43768166BE850006A51E3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43767166BE850006A51E3 /* SenTestingKit.framework */; };
+		37A43769166BE850006A51E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373B166BE850006A51E3 /* UIKit.framework */; };
+		37A4376A166BE850006A51E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373D166BE850006A51E3 /* Foundation.framework */; };
+		37A4376B166BE850006A51E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43741166BE850006A51E3 /* CoreData.framework */; };
+		37A43773166BE850006A51E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A43771166BE850006A51E3 /* InfoPlist.strings */; };
+		37A43776166BE850006A51E3 /* CreditCoopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A43775166BE850006A51E3 /* CreditCoopTests.m */; };
+		37A4378E166BE946006A51E3 /* libKVCMapping-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */; };
+		37A43799166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */; };
+		37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4379B166BEAD2006A51E3 /* CoreDataManager.m */; };
+		37A4379D166BEAD2006A51E3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4379B166BEAD2006A51E3 /* CoreDataManager.m */; };
+		37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437A0166BEAF1006A51E3 /* CreditCoop.m */; };
+		37A437A2166BEAF1006A51E3 /* CreditCoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437A0166BEAF1006A51E3 /* CreditCoop.m */; };
+		37A437BA166BF057006A51E3 /* CreditCoop.mogenerated in Resources */ = {isa = PBXBuildFile; fileRef = 37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */; };
+		37A437BB166BF057006A51E3 /* CreditCoop.mogenerated in Resources */ = {isa = PBXBuildFile; fileRef = 37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */; };
+		37A437BC166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */; };
+		37A437BD166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */; };
+		37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
+		37A437C6166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
+		37A437EE166C0014006A51E3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437ED166C0014006A51E3 /* LoginVC.m */; };
+		37C72D4416D054D70054AFE2 /* FRCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C72D4016D054940054AFE2 /* FRCVC.m */; };
+		37C72D5016D05DA90054AFE2 /* libTransformerKit-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C72D4D16D05D9D0054AFE2 /* libTransformerKit-ios.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37A4376C166BE850006A51E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A4372E166BE850006A51E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37A43736166BE850006A51E3;
+			remoteInfo = CreditCoop;
+		};
+		37A43788166BE93C006A51E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37A80DEE150B8CE800B9B6E1;
+			remoteInfo = "KVCMapping-ios";
+		};
+		37A4378A166BE93C006A51E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37235E741662BCCB00F33BF1;
+			remoteInfo = "KVCMapping-osx";
+		};
+		37A4378C166BE93C006A51E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37A80DFE150B8CE800B9B6E1;
+			remoteInfo = KVCMappingTests;
+		};
+		37A437B5166BEBAF006A51E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37A4372E166BE850006A51E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37A437B0166BEB52006A51E3;
+			remoteInfo = Mogenerate;
+		};
+		37C72D4C16D05D9D0054AFE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37A80DEE150B8CE800B9B6E1;
+			remoteInfo = "TransformerKit-ios";
+		};
+		37C72D4E16D05D9D0054AFE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 37235E741662BCCB00F33BF1;
+			remoteInfo = "TransformerKit-osx";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37A43737166BE850006A51E3 /* CreditCoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A4373B166BE850006A51E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		37A4373D166BE850006A51E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		37A4373F166BE850006A51E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		37A43741166BE850006A51E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		37A43745166BE850006A51E3 /* CreditCoop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreditCoop-Info.plist"; sourceTree = "<group>"; };
+		37A43747166BE850006A51E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37A43749166BE850006A51E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37A4374B166BE850006A51E3 /* CreditCoop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CreditCoop-Prefix.pch"; sourceTree = "<group>"; };
+		37A4374C166BE850006A51E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		37A4374D166BE850006A51E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		37A4374F166BE850006A51E3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		37A43751166BE850006A51E3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		37A43753166BE850006A51E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		37A43756166BE850006A51E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		37A43759166BE850006A51E3 /* CreditCoop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CreditCoop.xcdatamodel; sourceTree = "<group>"; };
+		37A4375B166BE850006A51E3 /* UserAccountsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserAccountsVC.h; sourceTree = "<group>"; };
+		37A4375C166BE850006A51E3 /* UserAccountsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAccountsVC.m; sourceTree = "<group>"; };
+		37A4375E166BE850006A51E3 /* AccountOperationsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountOperationsVC.h; sourceTree = "<group>"; };
+		37A4375F166BE850006A51E3 /* AccountOperationsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountOperationsVC.m; sourceTree = "<group>"; };
+		37A43766166BE850006A51E3 /* CreditCoopTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCoopTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37A43767166BE850006A51E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		37A43770166BE850006A51E3 /* CreditCoopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreditCoopTests-Info.plist"; sourceTree = "<group>"; };
+		37A43772166BE850006A51E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37A43774166BE850006A51E3 /* CreditCoopTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreditCoopTests.h; sourceTree = "<group>"; };
+		37A43775166BE850006A51E3 /* CreditCoopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreditCoopTests.m; sourceTree = "<group>"; };
+		37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KVCMapping.xcodeproj; path = KVCMapping/KVCMapping.xcodeproj; sourceTree = "<group>"; };
+		37A43797166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MultipleErrorsCombined.h"; sourceTree = "<group>"; };
+		37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MultipleErrorsCombined.m"; sourceTree = "<group>"; };
+		37A4379A166BEAD2006A51E3 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		37A4379B166BEAD2006A51E3 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		37A4379F166BEAF1006A51E3 /* CreditCoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.h; sourceTree = "<group>"; };
+		37A437A0166BEAF1006A51E3 /* CreditCoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCoop.m; sourceTree = "<group>"; };
+		37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CreditCoop.mogenerated; sourceTree = "<group>"; };
+		37A437B8166BF057006A51E3 /* CreditCoop.mogenerated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.mogenerated.h; sourceTree = "<group>"; };
+		37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCoop.mogenerated.m; sourceTree = "<group>"; };
+		37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+COOMapping.h"; sourceTree = "<group>"; };
+		37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+COOMapping.m"; sourceTree = "<group>"; };
+		37A437EC166C0013006A51E3 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		37A437ED166C0014006A51E3 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		37C72D3F16D054940054AFE2 /* FRCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCVC.h; sourceTree = "<group>"; };
+		37C72D4016D054940054AFE2 /* FRCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCVC.m; sourceTree = "<group>"; };
+		37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TransformerKit.xcodeproj; path = TransformerKit/TransformerKit.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37A43734166BE850006A51E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37C72D5016D05DA90054AFE2 /* libTransformerKit-ios.a in Frameworks */,
+				37A4378E166BE946006A51E3 /* libKVCMapping-ios.a in Frameworks */,
+				37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */,
+				37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */,
+				37A43740166BE850006A51E3 /* CoreGraphics.framework in Frameworks */,
+				37A43742166BE850006A51E3 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A43762166BE850006A51E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A43768166BE850006A51E3 /* SenTestingKit.framework in Frameworks */,
+				37A43769166BE850006A51E3 /* UIKit.framework in Frameworks */,
+				37A4376A166BE850006A51E3 /* Foundation.framework in Frameworks */,
+				37A4376B166BE850006A51E3 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37A4372C166BE850006A51E3 = {
+			isa = PBXGroup;
+			children = (
+				37A43743166BE850006A51E3 /* CreditCoop */,
+				37A4376E166BE850006A51E3 /* CreditCoopTests */,
+				37A4373A166BE850006A51E3 /* Frameworks */,
+				37A43738166BE850006A51E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37A43738166BE850006A51E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37A43737166BE850006A51E3 /* CreditCoop.app */,
+				37A43766166BE850006A51E3 /* CreditCoopTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37A4373A166BE850006A51E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */,
+				37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */,
+				37A4373B166BE850006A51E3 /* UIKit.framework */,
+				37A4373D166BE850006A51E3 /* Foundation.framework */,
+				37A4373F166BE850006A51E3 /* CoreGraphics.framework */,
+				37A43741166BE850006A51E3 /* CoreData.framework */,
+				37A43767166BE850006A51E3 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		37A43743166BE850006A51E3 /* CreditCoop */ = {
+			isa = PBXGroup;
+			children = (
+				37A4374C166BE850006A51E3 /* AppDelegate.h */,
+				37A4374D166BE850006A51E3 /* AppDelegate.m */,
+				37A43755166BE850006A51E3 /* MainStoryboard.storyboard */,
+				37A437EC166C0013006A51E3 /* LoginVC.h */,
+				37A437ED166C0014006A51E3 /* LoginVC.m */,
+				37A4375B166BE850006A51E3 /* UserAccountsVC.h */,
+				37A4375C166BE850006A51E3 /* UserAccountsVC.m */,
+				37A4375E166BE850006A51E3 /* AccountOperationsVC.h */,
+				37A4375F166BE850006A51E3 /* AccountOperationsVC.m */,
+				37A437BE166BF0AA006A51E3 /* Model */,
+				37A4379E166BEADE006A51E3 /* Utility */,
+				37A43744166BE850006A51E3 /* Supporting Files */,
+			);
+			path = CreditCoop;
+			sourceTree = "<group>";
+		};
+		37A43744166BE850006A51E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37A43745166BE850006A51E3 /* CreditCoop-Info.plist */,
+				37A43746166BE850006A51E3 /* InfoPlist.strings */,
+				37A43749166BE850006A51E3 /* main.m */,
+				37A4374B166BE850006A51E3 /* CreditCoop-Prefix.pch */,
+				37A4374F166BE850006A51E3 /* Default.png */,
+				37A43751166BE850006A51E3 /* Default@2x.png */,
+				37A43753166BE850006A51E3 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37A4376E166BE850006A51E3 /* CreditCoopTests */ = {
+			isa = PBXGroup;
+			children = (
+				37A43774166BE850006A51E3 /* CreditCoopTests.h */,
+				37A43775166BE850006A51E3 /* CreditCoopTests.m */,
+				37A4376F166BE850006A51E3 /* Supporting Files */,
+			);
+			path = CreditCoopTests;
+			sourceTree = "<group>";
+		};
+		37A4376F166BE850006A51E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37A43770166BE850006A51E3 /* CreditCoopTests-Info.plist */,
+				37A43771166BE850006A51E3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37A43780166BE93C006A51E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */,
+				37A4378B166BE93C006A51E3 /* libKVCMapping-osx.a */,
+				37A4378D166BE93C006A51E3 /* KVCMappingTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37A4379E166BEADE006A51E3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				37A43797166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.h */,
+				37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */,
+				37A4379A166BEAD2006A51E3 /* CoreDataManager.h */,
+				37A4379B166BEAD2006A51E3 /* CoreDataManager.m */,
+				37C72D3F16D054940054AFE2 /* FRCVC.h */,
+				37C72D4016D054940054AFE2 /* FRCVC.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		37A437BE166BF0AA006A51E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37A4379F166BEAF1006A51E3 /* CreditCoop.h */,
+				37A437A0166BEAF1006A51E3 /* CreditCoop.m */,
+				37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */,
+				37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */,
+				37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */,
+				37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */,
+				37A437B8166BF057006A51E3 /* CreditCoop.mogenerated.h */,
+				37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		37C72D4816D05D9D0054AFE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37C72D4D16D05D9D0054AFE2 /* libTransformerKit-ios.a */,
+				37C72D4F16D05D9D0054AFE2 /* libTransformerKit-osx.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37A43736166BE850006A51E3 /* CreditCoop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37A43779166BE850006A51E3 /* Build configuration list for PBXNativeTarget "CreditCoop" */;
+			buildPhases = (
+				37A43733166BE850006A51E3 /* Sources */,
+				37A43734166BE850006A51E3 /* Frameworks */,
+				37A43735166BE850006A51E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37A437B6166BEBAF006A51E3 /* PBXTargetDependency */,
+			);
+			name = CreditCoop;
+			productName = CreditCoop;
+			productReference = 37A43737166BE850006A51E3 /* CreditCoop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37A43765166BE850006A51E3 /* CreditCoopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37A4377C166BE850006A51E3 /* Build configuration list for PBXNativeTarget "CreditCoopTests" */;
+			buildPhases = (
+				37A43761166BE850006A51E3 /* Sources */,
+				37A43762166BE850006A51E3 /* Frameworks */,
+				37A43763166BE850006A51E3 /* Resources */,
+				37A43764166BE850006A51E3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37A4376D166BE850006A51E3 /* PBXTargetDependency */,
+			);
+			name = CreditCoopTests;
+			productName = CreditCoopTests;
+			productReference = 37A43766166BE850006A51E3 /* CreditCoopTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37A4372E166BE850006A51E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Nicolas Bouilleaud";
+			};
+			buildConfigurationList = 37A43731166BE850006A51E3 /* Build configuration list for PBXProject "CreditCoop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 37A4372C166BE850006A51E3;
+			productRefGroup = 37A43738166BE850006A51E3 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 37A43780166BE93C006A51E3 /* Products */;
+					ProjectRef = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
+				},
+				{
+					ProductGroup = 37C72D4816D05D9D0054AFE2 /* Products */;
+					ProjectRef = 37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				37A437B0166BEB52006A51E3 /* Mogenerate */,
+				37A43736166BE850006A51E3 /* CreditCoop */,
+				37A43765166BE850006A51E3 /* CreditCoopTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKVCMapping-ios.a";
+			remoteRef = 37A43788166BE93C006A51E3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37A4378B166BE93C006A51E3 /* libKVCMapping-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKVCMapping-osx.a";
+			remoteRef = 37A4378A166BE93C006A51E3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37A4378D166BE93C006A51E3 /* KVCMappingTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KVCMappingTests.octest;
+			remoteRef = 37A4378C166BE93C006A51E3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37C72D4D16D05D9D0054AFE2 /* libTransformerKit-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libTransformerKit-ios.a";
+			remoteRef = 37C72D4C16D05D9D0054AFE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		37C72D4F16D05D9D0054AFE2 /* libTransformerKit-osx.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libTransformerKit-osx.a";
+			remoteRef = 37C72D4E16D05D9D0054AFE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37A43735166BE850006A51E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A43748166BE850006A51E3 /* InfoPlist.strings in Resources */,
+				37A43750166BE850006A51E3 /* Default.png in Resources */,
+				37A43752166BE850006A51E3 /* Default@2x.png in Resources */,
+				37A43754166BE850006A51E3 /* Default-568h@2x.png in Resources */,
+				37A43757166BE850006A51E3 /* MainStoryboard.storyboard in Resources */,
+				37A437BA166BF057006A51E3 /* CreditCoop.mogenerated in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A43763166BE850006A51E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A43773166BE850006A51E3 /* InfoPlist.strings in Resources */,
+				37A437BB166BF057006A51E3 /* CreditCoop.mogenerated in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37A43764166BE850006A51E3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		37A437B4166BEB60006A51E3 /* Mogenerate */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/CreditCoop/CreditCoop.xcdatamodeld",
+			);
+			name = Mogenerate;
+			outputPaths = (
+				"$(SRCROOT)/CreditCoop/CreditCoop.mogenerated.m",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=$PATH:/usr/local/bin \\\n mogenerator \\\n --model \"${SRCROOT}/CreditCoop/CreditCoop.xcdatamodeld\" \\\n --template-var arc=true \\\n --machine-dir \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated/_machine\" \\\n --human-dir \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated/\" \\\n --includem \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated.m\" \\\n --includeh \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated.h\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37A43733166BE850006A51E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A4374A166BE850006A51E3 /* main.m in Sources */,
+				37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */,
+				37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */,
+				37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */,
+				37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */,
+				37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */,
+				37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */,
+				37A437BC166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */,
+				37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
+				37A437EE166C0014006A51E3 /* LoginVC.m in Sources */,
+				37C72D4416D054D70054AFE2 /* FRCVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A43761166BE850006A51E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37A43776166BE850006A51E3 /* CreditCoopTests.m in Sources */,
+				37A43799166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m in Sources */,
+				37A4379D166BEAD2006A51E3 /* CoreDataManager.m in Sources */,
+				37A437A2166BEAF1006A51E3 /* CreditCoop.m in Sources */,
+				37A437BD166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */,
+				37A437C6166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37A4376D166BE850006A51E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37A43736166BE850006A51E3 /* CreditCoop */;
+			targetProxy = 37A4376C166BE850006A51E3 /* PBXContainerItemProxy */;
+		};
+		37A437B6166BEBAF006A51E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37A437B0166BEB52006A51E3 /* Mogenerate */;
+			targetProxy = 37A437B5166BEBAF006A51E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37A43746166BE850006A51E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37A43747166BE850006A51E3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		37A43755166BE850006A51E3 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37A43756166BE850006A51E3 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		37A43771166BE850006A51E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37A43772166BE850006A51E3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37A43777166BE850006A51E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		37A43778166BE850006A51E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37A4377A166BE850006A51E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/KVCMapping/KVCMapping\"/**",
+					"\"$(SRCROOT)/CreditCoop/CreditCoop.mogenerated\"/**",
+					"\"$(SRCROOT)/TransformerKit\"/**",
+				);
+				INFOPLIST_FILE = "CreditCoop/CreditCoop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		37A4377B166BE850006A51E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/KVCMapping/KVCMapping\"/**",
+					"\"$(SRCROOT)/CreditCoop/CreditCoop.mogenerated\"/**",
+					"\"$(SRCROOT)/TransformerKit\"/**",
+				);
+				INFOPLIST_FILE = "CreditCoop/CreditCoop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		37A4377D166BE850006A51E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CreditCoop.app/CreditCoop";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
+				INFOPLIST_FILE = "CreditCoopTests/CreditCoopTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		37A4377E166BE850006A51E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CreditCoop.app/CreditCoop";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
+				INFOPLIST_FILE = "CreditCoopTests/CreditCoopTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		37A437B2166BEB52006A51E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37A437B3166BEB52006A51E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37A43731166BE850006A51E3 /* Build configuration list for PBXProject "CreditCoop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A43777166BE850006A51E3 /* Debug */,
+				37A43778166BE850006A51E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37A43779166BE850006A51E3 /* Build configuration list for PBXNativeTarget "CreditCoop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A4377A166BE850006A51E3 /* Debug */,
+				37A4377B166BE850006A51E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37A4377C166BE850006A51E3 /* Build configuration list for PBXNativeTarget "CreditCoopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A4377D166BE850006A51E3 /* Debug */,
+				37A4377E166BE850006A51E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37A437B1166BEB52006A51E3 /* Build configuration list for PBXAggregateTarget "Mogenerate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37A437B2166BEB52006A51E3 /* Debug */,
+				37A437B3166BEB52006A51E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37A43759166BE850006A51E3 /* CreditCoop.xcdatamodel */,
+			);
+			currentVersion = 37A43759166BE850006A51E3 /* CreditCoop.xcdatamodel */;
+			path = CreditCoop.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 37A4372E166BE850006A51E3 /* Project object */;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C3006" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Account" representedClassName="COOAccount" syncable="YES">
+        <attribute name="balance" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="balanceDate" attributeType="String" syncable="YES"/>
+        <attribute name="category" attributeType="String" syncable="YES"/>
+        <attribute name="label" attributeType="String" syncable="YES"/>
+        <attribute name="number" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="operations" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Operation" inverseName="account" inverseEntity="Operation" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="accounts" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Operation" representedClassName="COOOperation" syncable="YES">
+        <attribute name="amount" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="label1" attributeType="String" syncable="YES"/>
+        <attribute name="label2" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="account" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="operations" inverseEntity="Account" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="COOUser" syncable="YES">
+        <attribute name="email" attributeType="String" syncable="YES"/>
+        <attribute name="label" attributeType="String" syncable="YES"/>
+        <attribute name="lastConnectionDate" attributeType="String" syncable="YES"/>
+        <relationship name="accounts" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Account" inverseName="user" inverseEntity="Account" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Account" positionX="0" positionY="0" width="128" height="148"/>
+        <element name="Operation" positionX="196" positionY="15" width="128" height="120"/>
+        <element name="User" positionX="-218" positionY="45" width="128" height="103"/>
+    </elements>
+</model>
