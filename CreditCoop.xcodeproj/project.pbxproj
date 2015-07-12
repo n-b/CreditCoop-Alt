@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */; };
-		37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373B166BE850006A51E3 /* UIKit.framework */; };
-		37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373D166BE850006A51E3 /* Foundation.framework */; };
-		37A43740166BE850006A51E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373F166BE850006A51E3 /* CoreGraphics.framework */; };
-		37A43742166BE850006A51E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43741166BE850006A51E3 /* CoreData.framework */; };
-		37A43748166BE850006A51E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A43746166BE850006A51E3 /* InfoPlist.strings */; };
 		37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4374D166BE850006A51E3 /* AppDelegate.m */; };
 		37A43750166BE850006A51E3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A4374F166BE850006A51E3 /* Default.png */; };
 		37A43752166BE850006A51E3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A43751166BE850006A51E3 /* Default@2x.png */; };
@@ -31,13 +26,7 @@
 		3792AE361B5272CC006BE1E9 /* CreditCoop+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCoop+Model.h"; sourceTree = "<group>"; };
 		3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCoop+Model.m"; sourceTree = "<group>"; };
 		37A43737166BE850006A51E3 /* CreditCoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		37A4373B166BE850006A51E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		37A4373D166BE850006A51E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		37A4373F166BE850006A51E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		37A43741166BE850006A51E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		37A43745166BE850006A51E3 /* CreditCoop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreditCoop-Info.plist"; sourceTree = "<group>"; };
-		37A43747166BE850006A51E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		37A4374B166BE850006A51E3 /* CreditCoop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CreditCoop-Prefix.pch"; sourceTree = "<group>"; };
 		37A4374D166BE850006A51E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		37A4374F166BE850006A51E3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		37A43751166BE850006A51E3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -63,10 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */,
-				37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */,
-				37A43740166BE850006A51E3 /* CoreGraphics.framework in Frameworks */,
-				37A43742166BE850006A51E3 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				37A43743166BE850006A51E3 /* CreditCoop */,
-				37A4373A166BE850006A51E3 /* Frameworks */,
 				37A43738166BE850006A51E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,17 +72,6 @@
 				37A43737166BE850006A51E3 /* CreditCoop.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		37A4373A166BE850006A51E3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				37A4373B166BE850006A51E3 /* UIKit.framework */,
-				37A4373D166BE850006A51E3 /* Foundation.framework */,
-				37A4373F166BE850006A51E3 /* CoreGraphics.framework */,
-				37A43741166BE850006A51E3 /* CoreData.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		37A43743166BE850006A51E3 /* CreditCoop */ = {
@@ -123,8 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				37A43745166BE850006A51E3 /* CreditCoop-Info.plist */,
-				37A43746166BE850006A51E3 /* InfoPlist.strings */,
-				37A4374B166BE850006A51E3 /* CreditCoop-Prefix.pch */,
 				37A4374F166BE850006A51E3 /* Default.png */,
 				37A43751166BE850006A51E3 /* Default@2x.png */,
 				37A43753166BE850006A51E3 /* Default-568h@2x.png */,
@@ -147,10 +118,10 @@
 				37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */,
 				37A4379F166BEAF1006A51E3 /* CreditCoop.h */,
 				37A437A0166BEAF1006A51E3 /* CreditCoop.m */,
-				37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */,
-				37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */,
 				3792AE361B5272CC006BE1E9 /* CreditCoop+Model.h */,
 				3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */,
+				37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */,
+				37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -206,7 +177,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A43748166BE850006A51E3 /* InfoPlist.strings in Resources */,
 				37A43750166BE850006A51E3 /* Default.png in Resources */,
 				37A43752166BE850006A51E3 /* Default@2x.png in Resources */,
 				37A43754166BE850006A51E3 /* Default-568h@2x.png in Resources */,
@@ -236,14 +206,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		37A43746166BE850006A51E3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37A43747166BE850006A51E3 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		37A43755166BE850006A51E3 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -261,6 +223,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -291,6 +254,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -312,8 +276,6 @@
 		37A4377A166BE850006A51E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/KVCMapping/KVCMapping\"/**",
 					"\"$(SRCROOT)/CreditCoop/CreditCoop.mogenerated\"/**",
@@ -328,8 +290,6 @@
 		37A4377B166BE850006A51E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/KVCMapping/KVCMapping\"/**",
 					"\"$(SRCROOT)/CreditCoop/CreditCoop.mogenerated\"/**",

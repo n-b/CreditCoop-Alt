@@ -1,3 +1,4 @@
+@import CoreData;
 
 @interface NSManagedObject (Importing)
 - (void) importValues:(NSDictionary*)values_;
