@@ -55,7 +55,6 @@
 		37A437C6166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
 		37A437EE166C0014006A51E3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437ED166C0014006A51E3 /* LoginVC.m */; };
 		37C72D4416D054D70054AFE2 /* FRCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C72D4016D054940054AFE2 /* FRCVC.m */; };
-		37C72D5016D05DA90054AFE2 /* libTransformerKit-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C72D4D16D05D9D0054AFE2 /* libTransformerKit-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,20 +92,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 37A437B0166BEB52006A51E3;
 			remoteInfo = Mogenerate;
-		};
-		37C72D4C16D05D9D0054AFE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37A80DEE150B8CE800B9B6E1;
-			remoteInfo = "TransformerKit-ios";
-		};
-		37C72D4E16D05D9D0054AFE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37235E741662BCCB00F33BF1;
-			remoteInfo = "TransformerKit-osx";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -153,7 +138,6 @@
 		37A437ED166C0014006A51E3 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		37C72D3F16D054940054AFE2 /* FRCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCVC.h; sourceTree = "<group>"; };
 		37C72D4016D054940054AFE2 /* FRCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCVC.m; sourceTree = "<group>"; };
-		37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TransformerKit.xcodeproj; path = TransformerKit/TransformerKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37C72D5016D05DA90054AFE2 /* libTransformerKit-ios.a in Frameworks */,
 				37A4378E166BE946006A51E3 /* libKVCMapping-ios.a in Frameworks */,
 				37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */,
 				37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */,
@@ -206,7 +189,6 @@
 		37A4373A166BE850006A51E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */,
 				37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */,
 				37A4373B166BE850006A51E3 /* UIKit.framework */,
 				37A4373D166BE850006A51E3 /* Foundation.framework */,
@@ -307,15 +289,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		37C72D4816D05D9D0054AFE2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				37C72D4D16D05D9D0054AFE2 /* libTransformerKit-ios.a */,
-				37C72D4F16D05D9D0054AFE2 /* libTransformerKit-osx.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -380,10 +353,6 @@
 					ProductGroup = 37A43780166BE93C006A51E3 /* Products */;
 					ProjectRef = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
 				},
-				{
-					ProductGroup = 37C72D4816D05D9D0054AFE2 /* Products */;
-					ProjectRef = 37C72D4716D05D9D0054AFE2 /* TransformerKit.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -414,20 +383,6 @@
 			fileType = wrapper.cfbundle;
 			path = KVCMappingTests.octest;
 			remoteRef = 37A4378C166BE93C006A51E3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		37C72D4D16D05D9D0054AFE2 /* libTransformerKit-ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libTransformerKit-ios.a";
-			remoteRef = 37C72D4C16D05D9D0054AFE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		37C72D4F16D05D9D0054AFE2 /* libTransformerKit-osx.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libTransformerKit-osx.a";
-			remoteRef = 37C72D4E16D05D9D0054AFE2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

@@ -8,7 +8,6 @@
 
 #import "NSManagedObject+COOMapping.h"
 #import "CreditCoop.mogenerated.h"
-#import "NSValueTransformer+TransformerKit.h"
 
 @implementation COOUser (COOMapping)
 + (NSDictionary*) coomapping
@@ -35,24 +34,32 @@
 @end
 
 
-@implementation COOOperation (COOMapping)
-+ (NSDictionary*) coomapping
+@interface COOOperationDateTransformer : NSValueTransformer
+@end
+@implementation COOOperationDateTransformer
++ (Class) transformedValueClass { return [NSDate class]; }
+
+- (id) transformedValue:(id)value
 {
-    static dispatch_once_t onceToken;
+    if(![value isKindOfClass:[NSString class]])
+        return nil;
     static NSDateFormatter * formatter;
+    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         formatter = [NSDateFormatter new];
         formatter.dateFormat = @"dd.MM.yy";
         formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr"];
-        [NSValueTransformer registerValueTransformerWithName:@"OperationDate" transformedValueClass:[NSDate class]
-                          returningTransformedValueWithBlock:^NSDate*(NSString* value) {
-                              if([value isKindOfClass:[NSString class]])
-                              {
-                                  return [formatter dateFromString:value];
-                              }
-                              return nil;
-                          }];
+    });
+    return [formatter dateFromString:value];
+}
+@end
 
+@implementation COOOperation (COOMapping)
++ (NSDictionary*) coomapping
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [NSValueTransformer setValueTransformer:[COOOperationDateTransformer new] forName:@"OperationDate"];
     });
     return @{
     @"operationAmountSign" : COOOperationAttributes.amount,
