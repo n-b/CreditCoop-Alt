@@ -78,8 +78,6 @@
 		37A4375F166BE850006A51E3 /* AccountOperationsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountOperationsVC.m; sourceTree = "<group>"; };
 		37A43767166BE850006A51E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KVCMapping.xcodeproj; path = KVCMapping/KVCMapping.xcodeproj; sourceTree = "<group>"; };
-		37A43797166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MultipleErrorsCombined.h"; sourceTree = "<group>"; };
-		37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MultipleErrorsCombined.m"; sourceTree = "<group>"; };
 		37A4379A166BEAD2006A51E3 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		37A4379B166BEAD2006A51E3 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		37A4379F166BEAF1006A51E3 /* CreditCoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.h; sourceTree = "<group>"; };
@@ -182,8 +180,6 @@
 		37A4379E166BEADE006A51E3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				37A43797166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.h */,
-				37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */,
 				37A4379A166BEAD2006A51E3 /* CoreDataManager.h */,
 				37A4379B166BEAD2006A51E3 /* CoreDataManager.m */,
 			);
