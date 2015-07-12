@@ -2,9 +2,9 @@
 
 @interface CoreDataStack : NSObject
 
-- (id)init;									// default model name is NSStringFromClass([self class])
-- (id)initWithModelName:(NSString*)modelName;	// default store url is ~/Documents/<modelName>.sqlite
-- (id)initWithModelName:(NSString*)modelName storeURL:(NSURL*)storeURL;
+- (instancetype)init;									// default model name is NSStringFromClass([self class])
+- (instancetype)initWithModelName:(NSString*)modelName;	// default store url is ~/Documents/<modelName>.sqlite
+- (instancetype)initWithModelName:(NSString*)modelName storeURL:(NSURL*)storeURL NS_DESIGNATED_INITIALIZER;
 
 @property (readonly) NSManagedObjectContext *moc;
 

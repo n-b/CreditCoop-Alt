@@ -73,7 +73,7 @@
     switch(type_) {
         case NSFetchedResultsChangeInsert: [self.tableView insertRowsAtIndexPaths:@[newIndexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
         case NSFetchedResultsChangeDelete: [self.tableView deleteRowsAtIndexPaths:@[indexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeUpdate: [self configureCell:(AccountOperationCell*)[self.tableView cellForRowAtIndexPath:indexPath_] withObject:[_frc objectAtIndexPath:indexPath_]]; break;
+        case NSFetchedResultsChangeUpdate: [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath_] withObject:[_frc objectAtIndexPath:indexPath_]]; break;
         case NSFetchedResultsChangeMove: [self.tableView moveRowAtIndexPath:indexPath_ toIndexPath:newIndexPath_]; break;
             break;
     }
@@ -88,17 +88,17 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section_
 {
-    return [_frc.sections[section_] name];
+    return _frc.sections[section_].name;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView_
 {
-    return [_frc.sections count];
+    return _frc.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section_
 {
-    return [_frc.sections[section_] numberOfObjects];
+    return _frc.sections[section_].numberOfObjects;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath_
@@ -110,10 +110,10 @@
 
 - (void)configureCell:(AccountOperationCell *)cell_ withObject:(COOOperation*)operation_
 {
-    cell_.amountLabel.text = [operation_.amount description];
+    cell_.amountLabel.text = operation_.amount.description;
     cell_.label1Label.text = operation_.label1;
     cell_.label2Label.text = operation_.label2;
-    cell_.dateLabel.text = [operation_.date description];
+    cell_.dateLabel.text = operation_.date.description;
 }
 
 @end

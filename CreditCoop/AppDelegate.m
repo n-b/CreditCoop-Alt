@@ -6,7 +6,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
-@property CreditCoop * creditcoop;
+@property CreditCoop *creditcoop;
 @end
 
 int main(int argc_, char *argv_[])

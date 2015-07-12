@@ -6,6 +6,6 @@
 - (void)logout;
 - (void)loginWithUserCode:(NSString*)userCode_ sesame:(NSString*)sesame_ completion:(void(^)(NSString* error))completion_;
 - (void)refreshAccount:(COOAccount*)account_;
-- (COOUser*)user;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) COOUser *user;
 
 @end

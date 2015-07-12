@@ -8,19 +8,19 @@
 
 @implementation CoreDataStack
 
-- (id)init
+- (instancetype)init
 {
    return [self initWithModelName:NSStringFromClass(self.class)];
 }
 
-- (id)initWithModelName:(NSString*)modelName_
+- (instancetype)initWithModelName:(NSString*)modelName_
 {
-    NSString * documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString * documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSURL *storeURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:[modelName_ stringByAppendingPathExtension:@"sqlite"]]];
     return [self initWithModelName:modelName_ storeURL:storeURL];
 }
 
-- (id)initWithModelName:(NSString*)modelName_ storeURL:(NSURL*)storeURL_
+- (instancetype)initWithModelName:(NSString*)modelName_ storeURL:(NSURL*)storeURL_
 {
     self = [super init];
     if (self) {
@@ -40,7 +40,7 @@
         }
         
         // Copy embedded store, if we don't already have a store in the final location, and there's one in the app bundle.
-        if( ![NSFileManager.defaultManager fileExistsAtPath:[storeURL_ path]])
+        if( ![NSFileManager.defaultManager fileExistsAtPath:storeURL_.path])
         {
             NSString * storeName = storeURL_.path.lastPathComponent.stringByDeletingPathExtension;
             NSURL * embeddedStoreURL = [NSBundle.mainBundle URLForResource:storeName withExtension:@"sqlite"];
@@ -51,7 +51,7 @@
         // Create PSC
 		if (![self.psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL_ options:nil error:&error])
         {
-			NSLog(@"Unresolved error when opening store %@, %@", error, [error userInfo]);
+			NSLog(@"Unresolved error when opening store %@, %@", error, error.userInfo);
 			if( error.code == NSPersistentStoreIncompatibleVersionHashError )
             {
                 // This happens a lot during development. Just dump the old store and create a new one.

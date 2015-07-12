@@ -152,7 +152,7 @@
 		37A4372E166BE850006A51E3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Nicolas Bouilleaud";
 			};
 			buildConfigurationList = 37A43731166BE850006A51E3 /* Build configuration list for PBXProject "CreditCoop" */;
@@ -229,6 +229,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -282,6 +283,7 @@
 					"\"$(SRCROOT)/TransformerKit\"/**",
 				);
 				INFOPLIST_FILE = "CreditCoop/CreditCoop-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bouilleaud.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -296,6 +298,7 @@
 					"\"$(SRCROOT)/TransformerKit\"/**",
 				);
 				INFOPLIST_FILE = "CreditCoop/CreditCoop-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.bouilleaud.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

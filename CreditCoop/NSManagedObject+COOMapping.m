@@ -1,10 +1,13 @@
 #import "NSManagedObject+COOMapping.h"
 #import "CreditCoop+Model.h"
 
-#define SIMPLEMAPPING(attributename) (^(NSManagedObject* object, id value){[object setValue:value forKey:(attributename)];})
+typedef void (^MappingHandler)(NSManagedObject*, id);
+typedef NSDictionary<NSString *,MappingHandler> MappingDictionary;
+
+#define SIMPLEMAPPING(attributename_) (^(NSManagedObject* object, id value){[object setValue:value forKey:(attributename_)];})
 
 @interface NSManagedObject (COOMapping)
-+ (NSDictionary*)coomapping;
++ (MappingDictionary *)coomapping;
 @end
 
 @implementation NSManagedObject (COOImporting)
@@ -14,13 +17,13 @@
 }
 - (void)coo_importValue:(id)value_ forKey:(NSString*)key_
 {
-    void (^handler)(NSManagedObject* object, id value) = self.class.coomapping[key_];
+    MappingHandler handler = self.class.coomapping[key_];
     if(handler) handler(self, value_);
 }
 @end
 
 @implementation COOUser (COOMapping)
-+ (NSDictionary*)coomapping
++ (MappingDictionary *)coomapping
 {
     return @{ @"mail" : SIMPLEMAPPING(@"email"),
               @"label" : SIMPLEMAPPING(@"label"),
@@ -29,7 +32,7 @@
 @end
 
 @implementation COOAccount (COOMapping)
-+ (NSDictionary*)coomapping
++ (MappingDictionary *)coomapping
 {
     return @{@"accountNumber" : SIMPLEMAPPING(@"number"),
              @"balance" : SIMPLEMAPPING(@"balance"),
@@ -41,7 +44,7 @@
 @end
 
 @implementation COOOperation (COOMapping)
-+ (NSDictionary*) coomapping
++ (MappingDictionary *) coomapping
 {
     return @{@"operationAmountSign" : SIMPLEMAPPING(@"amount"),
              @"operationLabel1" : SIMPLEMAPPING(@"label1"),

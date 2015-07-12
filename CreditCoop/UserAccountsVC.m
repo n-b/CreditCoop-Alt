@@ -79,7 +79,7 @@
     switch(type_) {
         case NSFetchedResultsChangeInsert: [self.tableView insertRowsAtIndexPaths:@[newIndexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
         case NSFetchedResultsChangeDelete: [self.tableView deleteRowsAtIndexPaths:@[indexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeUpdate: [self configureCell:(UserAccountCell*)[self.tableView cellForRowAtIndexPath:indexPath_] withObject:[_frc objectAtIndexPath:indexPath_]]; break;
+        case NSFetchedResultsChangeUpdate: [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath_] withObject:[_frc objectAtIndexPath:indexPath_]]; break;
         case NSFetchedResultsChangeMove: [self.tableView moveRowAtIndexPath:indexPath_ toIndexPath:newIndexPath_]; break;
             break;
     }
@@ -94,17 +94,17 @@
 
 - (NSString *)tableView:(UITableView *)tableView_ titleForHeaderInSection:(NSInteger)section_
 {
-    return [_frc.sections[section_] name];
+    return _frc.sections[section_].name;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView_
 {
-    return [_frc.sections count];
+    return _frc.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView_ numberOfRowsInSection:(NSInteger)section_
 {
-    return [_frc.sections[section_] numberOfObjects];
+    return _frc.sections[section_].numberOfObjects;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath_
@@ -118,7 +118,7 @@
 {
     cell_.labelLabel.text = account_.label;
     cell_.numberLabel.text = account_.number;
-    cell_.balanceLabel.text = [account_.balance description];
+    cell_.balanceLabel.text = account_.balance.description;
     cell_.balanceDateLabel.text = account_.balanceDate;
 }
 
@@ -127,7 +127,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue_ sender:(id)sender_
 {
     if ([segue_.identifier isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         COOAccount *account = [_frc objectAtIndexPath:indexPath];
         [segue_.destinationViewController setAccount:account];
     }

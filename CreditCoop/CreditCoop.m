@@ -18,15 +18,15 @@
 - (void)loginWithUserCode:(NSString*)userCode_ sesame:(NSString*)sesame_ completion:(void(^)(NSString* error))completion_
 {
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:CREDITCOOP_HOST"banque/mob/json/user/sesamAuthenticate.action"]];
-    [request setHTTPMethod:@"POST"];
+    request.HTTPMethod = @"POST";
     [request addValue:@"Moz" forHTTPHeaderField:@"User-Agent"];
-    [request setHTTPBody:[[NSString stringWithFormat:@"userCode=%@&sesam=%@",userCode_,sesame_] dataUsingEncoding:NSUTF8StringEncoding]];
+    request.HTTPBody = [[NSString stringWithFormat:@"userCode=%@&sesam=%@",userCode_,sesame_] dataUsingEncoding:NSUTF8StringEncoding];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue]
                            completionHandler:^(NSURLResponse *r, NSData *data, NSError *error)
      {
          if(error) {
-             completion_([error localizedDescription]);
+             completion_(error.localizedDescription);
              return;
          }
          id dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
@@ -62,12 +62,12 @@
 - (void)refreshAccount:(COOAccount*)account_
 {
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:CREDITCOOP_HOST"banque/mob/json/account/detail.action"]];
-    [request setHTTPMethod:@"POST"];
+    request.HTTPMethod = @"POST";
     [request addValue:@"Moz" forHTTPHeaderField:@"User-Agent"];
     // socCode & balanceDate params seem useless.
     // beginIndex and endIndex work, but the webservice will not go further back than the 250 most recent operations.
-    [request setHTTPBody:[[NSString stringWithFormat:@"accountNumber=%@&beginIndex=0&endIndex=250",account_.number]
-                          dataUsingEncoding:NSUTF8StringEncoding]];
+    request.HTTPBody = [[NSString stringWithFormat:@"accountNumber=%@&beginIndex=0&endIndex=250",account_.number]
+                          dataUsingEncoding:NSUTF8StringEncoding];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue]
                            completionHandler:^(NSURLResponse *r, NSData *data, NSError *error)
@@ -89,7 +89,7 @@
 - (COOUser*)user
 {
     NSFetchRequest * userRequest = [NSFetchRequest fetchRequestWithEntityName:@"User"];
-    return [[self.moc executeFetchRequest:userRequest error:NULL] lastObject];
+    return [self.moc executeFetchRequest:userRequest error:NULL].lastObject;
 }
 
 @end
