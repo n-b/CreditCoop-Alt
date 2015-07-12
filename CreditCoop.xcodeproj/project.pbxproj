@@ -35,35 +35,16 @@
 		37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */; };
 		37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375C166BE850006A51E3 /* UserAccountsVC.m */; };
 		37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375F166BE850006A51E3 /* AccountOperationsVC.m */; };
-		37A43768166BE850006A51E3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43767166BE850006A51E3 /* SenTestingKit.framework */; };
-		37A43769166BE850006A51E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373B166BE850006A51E3 /* UIKit.framework */; };
-		37A4376A166BE850006A51E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373D166BE850006A51E3 /* Foundation.framework */; };
-		37A4376B166BE850006A51E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43741166BE850006A51E3 /* CoreData.framework */; };
-		37A43773166BE850006A51E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A43771166BE850006A51E3 /* InfoPlist.strings */; };
-		37A43776166BE850006A51E3 /* CreditCoopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A43775166BE850006A51E3 /* CreditCoopTests.m */; };
 		37A4378E166BE946006A51E3 /* libKVCMapping-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */; };
-		37A43799166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */; };
 		37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4379B166BEAD2006A51E3 /* CoreDataManager.m */; };
-		37A4379D166BEAD2006A51E3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4379B166BEAD2006A51E3 /* CoreDataManager.m */; };
 		37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437A0166BEAF1006A51E3 /* CreditCoop.m */; };
-		37A437A2166BEAF1006A51E3 /* CreditCoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437A0166BEAF1006A51E3 /* CreditCoop.m */; };
 		37A437BA166BF057006A51E3 /* CreditCoop.mogenerated in Resources */ = {isa = PBXBuildFile; fileRef = 37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */; };
-		37A437BB166BF057006A51E3 /* CreditCoop.mogenerated in Resources */ = {isa = PBXBuildFile; fileRef = 37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */; };
 		37A437BC166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */; };
-		37A437BD166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */; };
 		37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
-		37A437C6166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
 		37A437EE166C0014006A51E3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437ED166C0014006A51E3 /* LoginVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		37A4376C166BE850006A51E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37A4372E166BE850006A51E3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37A43736166BE850006A51E3;
-			remoteInfo = CreditCoop;
-		};
 		37A43788166BE93C006A51E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
@@ -115,12 +96,7 @@
 		37A4375C166BE850006A51E3 /* UserAccountsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAccountsVC.m; sourceTree = "<group>"; };
 		37A4375E166BE850006A51E3 /* AccountOperationsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountOperationsVC.h; sourceTree = "<group>"; };
 		37A4375F166BE850006A51E3 /* AccountOperationsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountOperationsVC.m; sourceTree = "<group>"; };
-		37A43766166BE850006A51E3 /* CreditCoopTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCoopTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A43767166BE850006A51E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		37A43770166BE850006A51E3 /* CreditCoopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreditCoopTests-Info.plist"; sourceTree = "<group>"; };
-		37A43772166BE850006A51E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		37A43774166BE850006A51E3 /* CreditCoopTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreditCoopTests.h; sourceTree = "<group>"; };
-		37A43775166BE850006A51E3 /* CreditCoopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreditCoopTests.m; sourceTree = "<group>"; };
 		37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KVCMapping.xcodeproj; path = KVCMapping/KVCMapping.xcodeproj; sourceTree = "<group>"; };
 		37A43797166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MultipleErrorsCombined.h"; sourceTree = "<group>"; };
 		37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MultipleErrorsCombined.m"; sourceTree = "<group>"; };
@@ -150,17 +126,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37A43762166BE850006A51E3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37A43768166BE850006A51E3 /* SenTestingKit.framework in Frameworks */,
-				37A43769166BE850006A51E3 /* UIKit.framework in Frameworks */,
-				37A4376A166BE850006A51E3 /* Foundation.framework in Frameworks */,
-				37A4376B166BE850006A51E3 /* CoreData.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -168,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				37A43743166BE850006A51E3 /* CreditCoop */,
-				37A4376E166BE850006A51E3 /* CreditCoopTests */,
 				37A4373A166BE850006A51E3 /* Frameworks */,
 				37A43738166BE850006A51E3 /* Products */,
 			);
@@ -178,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				37A43737166BE850006A51E3 /* CreditCoop.app */,
-				37A43766166BE850006A51E3 /* CreditCoopTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,25 +188,6 @@
 				37A4374F166BE850006A51E3 /* Default.png */,
 				37A43751166BE850006A51E3 /* Default@2x.png */,
 				37A43753166BE850006A51E3 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		37A4376E166BE850006A51E3 /* CreditCoopTests */ = {
-			isa = PBXGroup;
-			children = (
-				37A43774166BE850006A51E3 /* CreditCoopTests.h */,
-				37A43775166BE850006A51E3 /* CreditCoopTests.m */,
-				37A4376F166BE850006A51E3 /* Supporting Files */,
-			);
-			path = CreditCoopTests;
-			sourceTree = "<group>";
-		};
-		37A4376F166BE850006A51E3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				37A43770166BE850006A51E3 /* CreditCoopTests-Info.plist */,
-				37A43771166BE850006A51E3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,25 +249,6 @@
 			productReference = 37A43737166BE850006A51E3 /* CreditCoop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		37A43765166BE850006A51E3 /* CreditCoopTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 37A4377C166BE850006A51E3 /* Build configuration list for PBXNativeTarget "CreditCoopTests" */;
-			buildPhases = (
-				37A43761166BE850006A51E3 /* Sources */,
-				37A43762166BE850006A51E3 /* Frameworks */,
-				37A43763166BE850006A51E3 /* Resources */,
-				37A43764166BE850006A51E3 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				37A4376D166BE850006A51E3 /* PBXTargetDependency */,
-			);
-			name = CreditCoopTests;
-			productName = CreditCoopTests;
-			productReference = 37A43766166BE850006A51E3 /* CreditCoopTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -353,7 +278,6 @@
 			targets = (
 				37A437B0166BEB52006A51E3 /* Mogenerate */,
 				37A43736166BE850006A51E3 /* CreditCoop */,
-				37A43765166BE850006A51E3 /* CreditCoopTests */,
 			);
 		};
 /* End PBXProject section */
@@ -396,31 +320,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37A43763166BE850006A51E3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37A43773166BE850006A51E3 /* InfoPlist.strings in Resources */,
-				37A437BB166BF057006A51E3 /* CreditCoop.mogenerated in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37A43764166BE850006A51E3 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		37A437B4166BEB60006A51E3 /* Mogenerate */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,27 +359,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37A43761166BE850006A51E3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				37A43776166BE850006A51E3 /* CreditCoopTests.m in Sources */,
-				37A43799166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m in Sources */,
-				37A4379D166BEAD2006A51E3 /* CoreDataManager.m in Sources */,
-				37A437A2166BEAF1006A51E3 /* CreditCoop.m in Sources */,
-				37A437BD166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */,
-				37A437C6166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		37A4376D166BE850006A51E3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 37A43736166BE850006A51E3 /* CreditCoop */;
-			targetProxy = 37A4376C166BE850006A51E3 /* PBXContainerItemProxy */;
-		};
 		37A437B6166BEBAF006A51E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 37A437B0166BEB52006A51E3 /* Mogenerate */;
@@ -500,14 +384,6 @@
 				37A43756166BE850006A51E3 /* en */,
 			);
 			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		37A43771166BE850006A51E3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37A43772166BE850006A51E3 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -599,40 +475,6 @@
 			};
 			name = Release;
 		};
-		37A4377D166BE850006A51E3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CreditCoop.app/CreditCoop";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
-				INFOPLIST_FILE = "CreditCoopTests/CreditCoopTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		37A4377E166BE850006A51E3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CreditCoop.app/CreditCoop";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CreditCoop/CreditCoop-Prefix.pch";
-				INFOPLIST_FILE = "CreditCoopTests/CreditCoopTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 		37A437B2166BEB52006A51E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -664,15 +506,6 @@
 			buildConfigurations = (
 				37A4377A166BE850006A51E3 /* Debug */,
 				37A4377B166BE850006A51E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		37A4377C166BE850006A51E3 /* Build configuration list for PBXNativeTarget "CreditCoopTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				37A4377D166BE850006A51E3 /* Debug */,
-				37A4377E166BE850006A51E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
