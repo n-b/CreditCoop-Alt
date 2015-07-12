@@ -1,11 +1,3 @@
-//
-//  CreditCoop.h
-//  CreditCoop
-//
-//  Created by Nicolas on 02/12/12.
-//  Copyright (c) 2012 Nicolas Bouilleaud. All rights reserved.
-//
-
 #import "CoreDataManager.h"
 #import "CreditCoop+Model.h"
 

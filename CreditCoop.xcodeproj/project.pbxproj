@@ -14,7 +14,6 @@
 		37A43740166BE850006A51E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373F166BE850006A51E3 /* CoreGraphics.framework */; };
 		37A43742166BE850006A51E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43741166BE850006A51E3 /* CoreData.framework */; };
 		37A43748166BE850006A51E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37A43746166BE850006A51E3 /* InfoPlist.strings */; };
-		37A4374A166BE850006A51E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A43749166BE850006A51E3 /* main.m */; };
 		37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4374D166BE850006A51E3 /* AppDelegate.m */; };
 		37A43750166BE850006A51E3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A4374F166BE850006A51E3 /* Default.png */; };
 		37A43752166BE850006A51E3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A43751166BE850006A51E3 /* Default@2x.png */; };
@@ -63,9 +62,7 @@
 		37A43741166BE850006A51E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		37A43745166BE850006A51E3 /* CreditCoop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreditCoop-Info.plist"; sourceTree = "<group>"; };
 		37A43747166BE850006A51E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		37A43749166BE850006A51E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		37A4374B166BE850006A51E3 /* CreditCoop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CreditCoop-Prefix.pch"; sourceTree = "<group>"; };
-		37A4374C166BE850006A51E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		37A4374D166BE850006A51E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		37A4374F166BE850006A51E3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		37A43751166BE850006A51E3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -137,7 +134,6 @@
 		37A43743166BE850006A51E3 /* CreditCoop */ = {
 			isa = PBXGroup;
 			children = (
-				37A4374C166BE850006A51E3 /* AppDelegate.h */,
 				37A4374D166BE850006A51E3 /* AppDelegate.m */,
 				37A43755166BE850006A51E3 /* MainStoryboard.storyboard */,
 				37A437EC166C0013006A51E3 /* LoginVC.h */,
@@ -158,7 +154,6 @@
 			children = (
 				37A43745166BE850006A51E3 /* CreditCoop-Info.plist */,
 				37A43746166BE850006A51E3 /* InfoPlist.strings */,
-				37A43749166BE850006A51E3 /* main.m */,
 				37A4374B166BE850006A51E3 /* CreditCoop-Prefix.pch */,
 				37A4374F166BE850006A51E3 /* Default.png */,
 				37A43751166BE850006A51E3 /* Default@2x.png */,
@@ -296,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A4374A166BE850006A51E3 /* main.m in Sources */,
 				37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */,
 				37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */,
 				37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */,

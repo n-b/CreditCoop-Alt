@@ -1,19 +1,18 @@
-//
-//  AppDelegate.m
-//  CreditCoop
-//
-//  Created by Nicolas on 02/12/12.
-//  Copyright (c) 2012 Nicolas Bouilleaud. All rights reserved.
-//
-
-#import "AppDelegate.h"
 #import "LoginVC.h"
 #import "UserAccountsVC.h"
 #import "CreditCoop.h"
 
-@interface AppDelegate () <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@property (strong, nonatomic) UIWindow *window;
 @property CreditCoop * creditcoop;
 @end
+
+int main(int argc, char *argv[])
+{
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
 
 @implementation AppDelegate
 
