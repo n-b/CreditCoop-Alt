@@ -54,7 +54,6 @@
 		37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
 		37A437C6166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
 		37A437EE166C0014006A51E3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437ED166C0014006A51E3 /* LoginVC.m */; };
-		37C72D4416D054D70054AFE2 /* FRCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C72D4016D054940054AFE2 /* FRCVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,8 +135,6 @@
 		37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+COOMapping.m"; sourceTree = "<group>"; };
 		37A437EC166C0013006A51E3 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		37A437ED166C0014006A51E3 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
-		37C72D3F16D054940054AFE2 /* FRCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCVC.h; sourceTree = "<group>"; };
-		37C72D4016D054940054AFE2 /* FRCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,8 +265,6 @@
 				37A43798166BEAC6006A51E3 /* NSError+MultipleErrorsCombined.m */,
 				37A4379A166BEAD2006A51E3 /* CoreDataManager.h */,
 				37A4379B166BEAD2006A51E3 /* CoreDataManager.m */,
-				37C72D3F16D054940054AFE2 /* FRCVC.h */,
-				37C72D4016D054940054AFE2 /* FRCVC.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -459,7 +454,6 @@
 				37A437BC166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */,
 				37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
 				37A437EE166C0014006A51E3 /* LoginVC.m in Sources */,
-				37C72D4416D054D70054AFE2 /* FRCVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
