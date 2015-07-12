@@ -251,7 +251,6 @@
 			);
 			projectRoot = "";
 			targets = (
-				37A437B0166BEB52006A51E3 /* Mogenerate */,
 				37A43736166BE850006A51E3 /* CreditCoop */,
 			);
 		};
