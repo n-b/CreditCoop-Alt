@@ -1,43 +1,101 @@
 #import "CreditCoop.h"
 #import "NSManagedObject+COOMapping.h"
+@import UIKit;
 
 #define CREDITCOOP_HOST @"https://mobile.credit-cooperatif.coop/"
 
+typedef NSError*__nullable(^CompletionBlock)(NSDictionary*__nonnull dict);
+
 @implementation CreditCoop
+{
+    NSURLSession * _urlSession;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSURLSessionConfiguration * sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+        sessionConfig.HTTPMaximumConnectionsPerHost = 1;
+        sessionConfig.HTTPShouldSetCookies = YES;
+        sessionConfig.HTTPCookieAcceptPolicy = NSHTTPCookieAcceptPolicyAlways;
+        sessionConfig.HTTPAdditionalHeaders = @{@"User-Agent": @"Moz"};
+        _urlSession = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    }
+    return self;
+}
 
 - (void)logout
 {
     [self willChangeValueForKey:@"user"];
     COOUser * user = [self user];
     if(user)
-        [self.moc deleteObject:user];
+        [self.moc deleteObject:user]; // cascades to accounts and operations
     [self save:NULL];
     [self didChangeValueForKey:@"user"];
+    [_urlSession.configuration.HTTPCookieStorage removeCookiesSinceDate:NSDate.distantPast];
 }
 
-- (void)loginWithUserCode:(NSString*)userCode_ sesame:(NSString*)sesame_ completion:(void(^)(NSString* error))completion_
+- (void)makeRequest:(NSString*)path_ withArguments:(NSDictionary*)queryParams
+         completion:(CompletionBlock)completion_
 {
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:CREDITCOOP_HOST"banque/mob/json/user/sesamAuthenticate.action"]];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[CREDITCOOP_HOST stringByAppendingString:path_]]];
     request.HTTPMethod = @"POST";
-    [request addValue:@"Moz" forHTTPHeaderField:@"User-Agent"];
-    request.HTTPBody = [[NSString stringWithFormat:@"userCode=%@&sesam=%@",userCode_,sesame_] dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue]
-                           completionHandler:^(NSURLResponse *r, NSData *data, NSError *error)
-     {
-         if(error) {
-             completion_(error.localizedDescription);
-             return;
-         }
-         id dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-         id errors = dict[@"errors"];
+    NSMutableArray * queryItems = [NSMutableArray new];
+    for (NSString * param in queryParams) {
+        [queryItems addObject:[NSURLQueryItem queryItemWithName:param value:queryParams[param]]];
+    }
+    NSURLComponents * comps = [NSURLComponents new];
+    comps.queryItems = queryItems;
+    request.HTTPBody = [comps.query dataUsingEncoding:NSUTF8StringEncoding];
+    [[_urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+      {
+          error = [self handleResultWithData:data response:response error:error completion:completion_];
+          [self refreshActivityIndicator];
+      }
+      ] resume];
+    [self refreshActivityIndicator];
+}
+
+- (NSError*)handleResultWithData:(NSData *)data_ response:(NSURLResponse *)response_ error:(NSError *)error_ completion:(CompletionBlock)completion_
+{
+    if(error_) return error_;
+    if(data_.length==0) return [NSError errorWithDomain:@"OUCH" code:2 userInfo:nil];
+    id dict = [NSJSONSerialization JSONObjectWithData:data_ options:0 error:&error_];
+    if(error_) return error_;
+    if(dict==nil) return [NSError errorWithDomain:@"OUCH" code:2 userInfo:nil];
+    NSArray* errors = dict[@"errors"];
+    if(errors.count) return [NSError errorWithDomain:@"OUCH" code:2 userInfo:nil];
+    error_ = completion_(dict);
+    if(error_) return error_;
+    [self save:&error_];
+    if(error_) return error_;
+    return nil;
+}
+
+- (void)notifyError:(NSError*)error_
+{
+    [[[UIAlertView alloc] initWithTitle:error_.localizedDescription
+                                message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+}
+
+- (void)refreshActivityIndicator
+{
+    [_urlSession getAllTasksWithCompletionHandler:^(NSArray* tasks) {
+        UIApplication.sharedApplication.networkActivityIndicatorVisible = tasks.count>0;
+    }];
+}
+
+- (void)loginWithUserCode:(NSString*)userCode_ sesame:(NSString*)sesame_ completion:(void(^)(BOOL success))completion_
+{
+    [self makeRequest:@"banque/mob/json/user/sesamAuthenticate.action"
+        withArguments:@{@"userCode":userCode_,
+                        @"sesam":sesame_}
+           completion:^NSError*__nullable(NSDictionary*__nonnull dict)
+    {
          id userDict = dict[@"beans"][@"user"];
-         if(userDict==nil || [errors count]>0) {
-             if([errors count])
-                 completion_(errors[0]);
-             else
-                 completion_(@"Login Failed");
-             return;
+         if(userDict==nil) {
+             return [NSError errorWithDomain:@"OUCH" code:2 userInfo:nil];
          }
          
          [self willChangeValueForKey:@"user"];
@@ -54,36 +112,28 @@
          }
          [self save:NULL];
          [self didChangeValueForKey:@"user"];
-
-         completion_(nil);
+         return nil;
      }];
 }
 
 - (void)refreshAccount:(COOAccount*)account_
 {
-    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:CREDITCOOP_HOST"banque/mob/json/account/detail.action"]];
-    request.HTTPMethod = @"POST";
-    [request addValue:@"Moz" forHTTPHeaderField:@"User-Agent"];
-    // socCode & balanceDate params seem useless.
-    // beginIndex and endIndex work, but the webservice will not go further back than the 250 most recent operations.
-    request.HTTPBody = [[NSString stringWithFormat:@"accountNumber=%@&beginIndex=0&endIndex=250",account_.number]
-                          dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue]
-                           completionHandler:^(NSURLResponse *r, NSData *data, NSError *error)
+    [self makeRequest:@"banque/mob/json/account/detail.action"
+        withArguments:@{@"accountNumber":account_.number,
+                        @"beginIndex":@"0", @"endIndex":@"250"}
+           completion:^NSError*__nullable(NSDictionary*__nonnull dict)
      {
-         id dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-
-         
-         assert([dict[@"beans"][@"operationList"] isEqual:dict[@"beans"][@"creditOperationList"]]);
-         id operations = dict[@"beans"][@"operationList"];
-         for (id operationDict in operations) {
-             COOOperation * operation = [NSEntityDescription insertNewObjectForEntityForName:@"Operation" inManagedObjectContext:self.moc];
-             [operation coo_importValues:operationDict];
-             operation.account = account_;
-         }
-         [self save:NULL];
-     }];
+               if(![dict[@"beans"][@"operationList"] isEqual:dict[@"beans"][@"creditOperationList"]]) {
+                   return [NSError errorWithDomain:@"OUCH" code:3 userInfo:nil];
+               }
+               id operations = dict[@"beans"][@"operationList"];
+               for (id operationDict in operations) {
+                   COOOperation * operation = [NSEntityDescription insertNewObjectForEntityForName:@"Operation" inManagedObjectContext:self.moc];
+                   [operation coo_importValues:operationDict];
+                   operation.account = account_;
+               }
+               return nil;
+           }];
 }
 
 - (COOUser*)user

@@ -15,11 +15,10 @@
 
 - (IBAction)login
 {
-    [self.creditcoop loginWithUserCode:self.userCodeField.text sesame:self.sesameField.text completion:^(NSString *error) {
-        if(error)
-            [[[UIAlertView alloc] initWithTitle:@"Login Error" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-        else
+    [self.creditcoop loginWithUserCode:self.userCodeField.text sesame:self.sesameField.text completion:^(BOOL success) {
+        if(success) {
             [NSUserDefaults.standardUserDefaults setObject:self.userCodeField.text forKey:@"CreditCoop.Login.userCode"];
+        }
     }];
 }
 
