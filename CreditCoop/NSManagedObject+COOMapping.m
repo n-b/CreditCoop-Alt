@@ -13,9 +13,9 @@
 + (NSDictionary*) coomapping
 {
     return @{
-    @"mail" : COOUserAttributes.email,
-    @"label" : COOUserAttributes.label,
-    @"lastConnectionDate" : COOUserAttributes.lastConnectionDate};
+    @"mail" : @"email",
+    @"label" : @"label",
+    @"lastConnectionDate" : @"lastConnectionDate"};
 }
 @end
 
@@ -24,11 +24,11 @@
 + (NSDictionary*) coomapping
 {
     return @{
-    @"accountNumber" : COOAccountAttributes.number,
-    @"balance" : COOAccountAttributes.balance,
-    @"balanceDate" : COOAccountAttributes.balanceDate,
-    @"category" : COOAccountAttributes.category,
-    @"label" : COOAccountAttributes.label,
+    @"accountNumber" : @"number",
+    @"balance" : @"balance",
+    @"balanceDate" : @"balanceDate",
+    @"category" : @"category",
+    @"label" : @"label",
     };
 }
 @end
@@ -62,10 +62,10 @@
         [NSValueTransformer setValueTransformer:[COOOperationDateTransformer new] forName:@"OperationDate"];
     });
     return @{
-    @"operationAmountSign" : COOOperationAttributes.amount,
-    @"operationDate" : [NSString stringWithFormat:@"%@:%@",@"OperationDate",COOOperationAttributes.date],
-    @"operationLabel1" : COOOperationAttributes.label1,
-    @"operationLabel2" : COOOperationAttributes.label2,
+    @"operationAmountSign" : @"amount",
+    @"operationDate" : [NSString stringWithFormat:@"%@:%@",@"OperationDate",@"date"],
+    @"operationLabel1" : @"label1",
+    @"operationLabel2" : @"label2",
     };
 }
 @end

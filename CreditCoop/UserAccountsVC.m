@@ -37,15 +37,15 @@
         return;
     }
     
-    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[COOAccount entityName]];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K == %@",COOAccountRelationships.user, user_];
-    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:COOAccountAttributes.category ascending:YES],
-                                     [[NSSortDescriptor alloc] initWithKey:COOAccountAttributes.number ascending:YES]];
+    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Account"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K == %@",@"user", user_];
+    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"category" ascending:YES],
+                                     [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES]];
     
     _frc = [[NSFetchedResultsController alloc]
             initWithFetchRequest:fetchRequest
             managedObjectContext:user_.managedObjectContext
-            sectionNameKeyPath:COOAccountAttributes.category
+            sectionNameKeyPath:@"category"
             cacheName:nil];
     _frc.delegate = self;
     

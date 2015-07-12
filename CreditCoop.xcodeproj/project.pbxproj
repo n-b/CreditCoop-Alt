@@ -6,21 +6,9 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		37A437B0166BEB52006A51E3 /* Mogenerate */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 37A437B1166BEB52006A51E3 /* Build configuration list for PBXAggregateTarget "Mogenerate" */;
-			buildPhases = (
-				37A437B4166BEB60006A51E3 /* Mogenerate */,
-			);
-			dependencies = (
-			);
-			name = Mogenerate;
-			productName = Mogenerate;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
+		3792AE1A1B52565B006BE1E9 /* libKVCMapping-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */; };
+		3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */; };
 		37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373B166BE850006A51E3 /* UIKit.framework */; };
 		37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373D166BE850006A51E3 /* Foundation.framework */; };
 		37A43740166BE850006A51E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373F166BE850006A51E3 /* CoreGraphics.framework */; };
@@ -35,11 +23,8 @@
 		37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */; };
 		37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375C166BE850006A51E3 /* UserAccountsVC.m */; };
 		37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375F166BE850006A51E3 /* AccountOperationsVC.m */; };
-		37A4378E166BE946006A51E3 /* libKVCMapping-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */; };
 		37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4379B166BEAD2006A51E3 /* CoreDataManager.m */; };
 		37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437A0166BEAF1006A51E3 /* CreditCoop.m */; };
-		37A437BA166BF057006A51E3 /* CreditCoop.mogenerated in Resources */ = {isa = PBXBuildFile; fileRef = 37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */; };
-		37A437BC166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */; };
 		37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
 		37A437EE166C0014006A51E3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437ED166C0014006A51E3 /* LoginVC.m */; };
 /* End PBXBuildFile section */
@@ -66,16 +51,15 @@
 			remoteGlobalIDString = 37A80DFE150B8CE800B9B6E1;
 			remoteInfo = KVCMappingTests;
 		};
-		37A437B5166BEBAF006A51E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37A4372E166BE850006A51E3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37A437B0166BEB52006A51E3;
-			remoteInfo = Mogenerate;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3792AE2D1B527162006BE1E9 /* COOAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOAccount.h; sourceTree = "<group>"; };
+		3792AE2E1B527162006BE1E9 /* COOAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOAccount.m; sourceTree = "<group>"; };
+		3792AE2F1B527162006BE1E9 /* COOOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOOperation.h; sourceTree = "<group>"; };
+		3792AE301B527162006BE1E9 /* COOOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOOperation.m; sourceTree = "<group>"; };
+		3792AE311B527162006BE1E9 /* COOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOUser.h; sourceTree = "<group>"; };
+		3792AE321B527162006BE1E9 /* COOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOUser.m; sourceTree = "<group>"; };
 		37A43737166BE850006A51E3 /* CreditCoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A4373B166BE850006A51E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37A4373D166BE850006A51E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,9 +88,6 @@
 		37A4379B166BEAD2006A51E3 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		37A4379F166BEAF1006A51E3 /* CreditCoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.h; sourceTree = "<group>"; };
 		37A437A0166BEAF1006A51E3 /* CreditCoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCoop.m; sourceTree = "<group>"; };
-		37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CreditCoop.mogenerated; sourceTree = "<group>"; };
-		37A437B8166BF057006A51E3 /* CreditCoop.mogenerated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.mogenerated.h; sourceTree = "<group>"; };
-		37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCoop.mogenerated.m; sourceTree = "<group>"; };
 		37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+COOMapping.h"; sourceTree = "<group>"; };
 		37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+COOMapping.m"; sourceTree = "<group>"; };
 		37A437EC166C0013006A51E3 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
@@ -216,14 +197,17 @@
 		37A437BE166BF0AA006A51E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */,
 				37A4379F166BEAF1006A51E3 /* CreditCoop.h */,
 				37A437A0166BEAF1006A51E3 /* CreditCoop.m */,
 				37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */,
 				37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */,
-				37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */,
-				37A437B7166BF057006A51E3 /* CreditCoop.mogenerated */,
-				37A437B8166BF057006A51E3 /* CreditCoop.mogenerated.h */,
-				37A437B9166BF057006A51E3 /* CreditCoop.mogenerated.m */,
+				3792AE2D1B527162006BE1E9 /* COOAccount.h */,
+				3792AE2E1B527162006BE1E9 /* COOAccount.m */,
+				3792AE2F1B527162006BE1E9 /* COOOperation.h */,
+				3792AE301B527162006BE1E9 /* COOOperation.m */,
+				3792AE311B527162006BE1E9 /* COOUser.h */,
+				3792AE321B527162006BE1E9 /* COOUser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -242,7 +226,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				37A437B6166BEBAF006A51E3 /* PBXTargetDependency */,
 			);
 			name = CreditCoop;
 			productName = CreditCoop;
@@ -316,30 +299,10 @@
 				37A43752166BE850006A51E3 /* Default@2x.png in Resources */,
 				37A43754166BE850006A51E3 /* Default-568h@2x.png in Resources */,
 				37A43757166BE850006A51E3 /* MainStoryboard.storyboard in Resources */,
-				37A437BA166BF057006A51E3 /* CreditCoop.mogenerated in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		37A437B4166BEB60006A51E3 /* Mogenerate */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/CreditCoop/CreditCoop.xcdatamodeld",
-			);
-			name = Mogenerate;
-			outputPaths = (
-				"$(SRCROOT)/CreditCoop/CreditCoop.mogenerated.m",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "PATH=$PATH:/usr/local/bin \\\n mogenerator \\\n --model \"${SRCROOT}/CreditCoop/CreditCoop.xcdatamodeld\" \\\n --template-var arc=true \\\n --machine-dir \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated/_machine\" \\\n --human-dir \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated/\" \\\n --includem \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated.m\" \\\n --includeh \"${SRCROOT}/CreditCoop/CreditCoop.mogenerated.h\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37A43733166BE850006A51E3 /* Sources */ = {
@@ -353,21 +316,15 @@
 				37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */,
 				37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */,
 				37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */,
-				37A437BC166BF057006A51E3 /* CreditCoop.mogenerated.m in Sources */,
 				37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
+				3792AE331B527162006BE1E9 /* COOAccount.m in Sources */,
+				3792AE351B527162006BE1E9 /* COOUser.m in Sources */,
 				37A437EE166C0014006A51E3 /* LoginVC.m in Sources */,
+				3792AE341B527162006BE1E9 /* COOOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		37A437B6166BEBAF006A51E3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 37A437B0166BEB52006A51E3 /* Mogenerate */;
-			targetProxy = 37A437B5166BEBAF006A51E3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		37A43746166BE850006A51E3 /* InfoPlist.strings */ = {
@@ -475,20 +432,6 @@
 			};
 			name = Release;
 		};
-		37A437B2166BEB52006A51E3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		37A437B3166BEB52006A51E3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -506,15 +449,6 @@
 			buildConfigurations = (
 				37A4377A166BE850006A51E3 /* Debug */,
 				37A4377B166BE850006A51E3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		37A437B1166BEB52006A51E3 /* Build configuration list for PBXAggregateTarget "Mogenerate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				37A437B2166BEB52006A51E3 /* Debug */,
-				37A437B3166BEB52006A51E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

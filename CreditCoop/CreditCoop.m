@@ -50,12 +50,12 @@
          
          [self willChangeValueForKey:@"user"];
          
-         COOUser * user = [COOUser insertInManagedObjectContext:self.moc];
+         COOUser * user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.moc];
          [user setValuesForKeysWithDictionary:userDict withMappingDictionary:[COOUser coomapping]];
          
          id accounts = userDict[@"accountList"];
          for (id accountDict in accounts) {
-             COOAccount * account = [COOAccount insertInManagedObjectContext:self.moc];
+             COOAccount * account = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:self.moc];
              [account setValuesForKeysWithDictionary:accountDict withMappingDictionary:[COOAccount coomapping]];
              account.user = user;
              [self refreshAccount:account];
@@ -84,7 +84,7 @@
          assert([dict[@"beans"][@"operationList"] isEqual:dict[@"beans"][@"creditOperationList"]]);
          id operations = dict[@"beans"][@"operationList"];
          for (id operationDict in operations) {
-             COOOperation * operation = [COOOperation insertInManagedObjectContext:self.moc];
+             COOOperation * operation = [NSEntityDescription insertNewObjectForEntityForName:@"Operation" inManagedObjectContext:self.moc];
              [operation setValuesForKeysWithDictionary:operationDict withMappingDictionary:[COOOperation coomapping]];
              operation.account = account;
          }
@@ -94,7 +94,7 @@
 
 - (COOUser*) user
 {
-    NSFetchRequest * userRequest = [NSFetchRequest fetchRequestWithEntityName:[COOUser entityName]];
+    NSFetchRequest * userRequest = [NSFetchRequest fetchRequestWithEntityName:@"User"];
     return [[self.moc executeFetchRequest:userRequest error:NULL] lastObject];
 }
 

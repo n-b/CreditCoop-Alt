@@ -34,15 +34,15 @@
         return;
     }
     
-    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[COOOperation entityName]];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K == %@",COOOperationRelationships.account, account_];
-    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:COOOperationAttributes.date ascending:NO],
-                                     [[NSSortDescriptor alloc] initWithKey:COOOperationAttributes.amount ascending:NO]];
+    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Operation"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"%K == %@",@"account", account_];
+    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO],
+                                     [[NSSortDescriptor alloc] initWithKey:@"amount" ascending:NO]];
     
     _frc = [[NSFetchedResultsController alloc]
             initWithFetchRequest:fetchRequest
             managedObjectContext:account_.managedObjectContext
-            sectionNameKeyPath:COOOperationAttributes.date
+            sectionNameKeyPath:@"date"
             cacheName:nil];
     _frc.delegate = self;
     
