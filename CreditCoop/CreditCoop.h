@@ -7,7 +7,8 @@
 //
 
 #import "CoreDataManager.h"
-#import "CreditCoop.mogenerated.h"
+#import "CreditCoop+Model.h"
+
 @interface CreditCoop : CoreDataManager
 
 - (void) logout;

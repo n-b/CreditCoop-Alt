@@ -54,12 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3792AE2D1B527162006BE1E9 /* COOAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOAccount.h; sourceTree = "<group>"; };
-		3792AE2E1B527162006BE1E9 /* COOAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOAccount.m; sourceTree = "<group>"; };
-		3792AE2F1B527162006BE1E9 /* COOOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOOperation.h; sourceTree = "<group>"; };
-		3792AE301B527162006BE1E9 /* COOOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOOperation.m; sourceTree = "<group>"; };
-		3792AE311B527162006BE1E9 /* COOUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COOUser.h; sourceTree = "<group>"; };
-		3792AE321B527162006BE1E9 /* COOUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COOUser.m; sourceTree = "<group>"; };
+		3792AE361B5272CC006BE1E9 /* CreditCoop+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCoop+Model.h"; sourceTree = "<group>"; };
+		3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCoop+Model.m"; sourceTree = "<group>"; };
 		37A43737166BE850006A51E3 /* CreditCoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A4373B166BE850006A51E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37A4373D166BE850006A51E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -202,12 +198,8 @@
 				37A437A0166BEAF1006A51E3 /* CreditCoop.m */,
 				37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */,
 				37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */,
-				3792AE2D1B527162006BE1E9 /* COOAccount.h */,
-				3792AE2E1B527162006BE1E9 /* COOAccount.m */,
-				3792AE2F1B527162006BE1E9 /* COOOperation.h */,
-				3792AE301B527162006BE1E9 /* COOOperation.m */,
-				3792AE311B527162006BE1E9 /* COOUser.h */,
-				3792AE321B527162006BE1E9 /* COOUser.m */,
+				3792AE361B5272CC006BE1E9 /* CreditCoop+Model.h */,
+				3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -317,10 +309,8 @@
 				37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */,
 				37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */,
 				37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
-				3792AE331B527162006BE1E9 /* COOAccount.m in Sources */,
-				3792AE351B527162006BE1E9 /* COOUser.m in Sources */,
+				3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */,
 				37A437EE166C0014006A51E3 /* LoginVC.m in Sources */,
-				3792AE341B527162006BE1E9 /* COOOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

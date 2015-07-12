@@ -7,7 +7,7 @@
 //
 
 #import "AccountOperationsVC.h"
-#import "COOOperation.h"
+#import "CreditCoop+Model.h"
 
 @interface AccountOperationCell : UITableViewCell
 @property IBOutlet UILabel * amountLabel;

@@ -7,7 +7,7 @@
 //
 
 #import "NSManagedObject+COOMapping.h"
-#import "CreditCoop.mogenerated.h"
+#import "CreditCoop+Model.h"
 
 @implementation COOUser (COOMapping)
 + (NSDictionary*) coomapping

@@ -6,7 +6,8 @@
 //  Copyright (c) 2012 Nicolas Bouilleaud. All rights reserved.
 //
 
-#import "COOUser.h"
+#import "CreditCoop+Model.h"
+
 @interface UserAccountsVC : UITableViewController
 
 - (void) setUser:(COOUser*)user_;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Nicolas Bouilleaud. All rights reserved.
 //
 
-#import "COOAccount.h"
+#import "CreditCoop+Model.h"
 
 @interface AccountOperationsVC : UITableViewController
 

@@ -8,8 +8,7 @@
 
 #import "UserAccountsVC.h"
 #import "AccountOperationsVC.h"
-
-#import "COOAccount.h"
+#import "CreditCoop+Model.h"
 
 @interface UserAccountCell : UITableViewCell
 @property IBOutlet UILabel * labelLabel;
