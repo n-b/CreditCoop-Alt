@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3792AE1A1B52565B006BE1E9 /* libKVCMapping-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */; };
 		3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */; };
 		37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373B166BE850006A51E3 /* UIKit.framework */; };
 		37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A4373D166BE850006A51E3 /* Foundation.framework */; };
@@ -27,30 +26,6 @@
 		37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
 		37A437EE166C0014006A51E3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437ED166C0014006A51E3 /* LoginVC.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		37A43788166BE93C006A51E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37A80DEE150B8CE800B9B6E1;
-			remoteInfo = "KVCMapping-ios";
-		};
-		37A4378A166BE93C006A51E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37235E741662BCCB00F33BF1;
-			remoteInfo = "KVCMapping-osx";
-		};
-		37A4378C166BE93C006A51E3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37A80DFE150B8CE800B9B6E1;
-			remoteInfo = KVCMappingTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3792AE361B5272CC006BE1E9 /* CreditCoop+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCoop+Model.h"; sourceTree = "<group>"; };
@@ -74,7 +49,6 @@
 		37A4375E166BE850006A51E3 /* AccountOperationsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountOperationsVC.h; sourceTree = "<group>"; };
 		37A4375F166BE850006A51E3 /* AccountOperationsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountOperationsVC.m; sourceTree = "<group>"; };
 		37A43767166BE850006A51E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KVCMapping.xcodeproj; path = KVCMapping/KVCMapping.xcodeproj; sourceTree = "<group>"; };
 		37A4379A166BEAD2006A51E3 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		37A4379B166BEAD2006A51E3 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		37A4379F166BEAF1006A51E3 /* CreditCoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.h; sourceTree = "<group>"; };
@@ -90,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A4378E166BE946006A51E3 /* libKVCMapping-ios.a in Frameworks */,
 				37A4373C166BE850006A51E3 /* UIKit.framework in Frameworks */,
 				37A4373E166BE850006A51E3 /* Foundation.framework in Frameworks */,
 				37A43740166BE850006A51E3 /* CoreGraphics.framework in Frameworks */,
@@ -121,7 +94,6 @@
 		37A4373A166BE850006A51E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */,
 				37A4373B166BE850006A51E3 /* UIKit.framework */,
 				37A4373D166BE850006A51E3 /* Foundation.framework */,
 				37A4373F166BE850006A51E3 /* CoreGraphics.framework */,
@@ -160,16 +132,6 @@
 				37A43753166BE850006A51E3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		37A43780166BE93C006A51E3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */,
-				37A4378B166BE93C006A51E3 /* libKVCMapping-osx.a */,
-				37A4378D166BE93C006A51E3 /* KVCMappingTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		37A4379E166BEADE006A51E3 /* Utility */ = {
@@ -234,42 +196,12 @@
 			mainGroup = 37A4372C166BE850006A51E3;
 			productRefGroup = 37A43738166BE850006A51E3 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 37A43780166BE93C006A51E3 /* Products */;
-					ProjectRef = 37A4377F166BE93C006A51E3 /* KVCMapping.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				37A43736166BE850006A51E3 /* CreditCoop */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		37A43789166BE93C006A51E3 /* libKVCMapping-ios.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libKVCMapping-ios.a";
-			remoteRef = 37A43788166BE93C006A51E3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		37A4378B166BE93C006A51E3 /* libKVCMapping-osx.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libKVCMapping-osx.a";
-			remoteRef = 37A4378A166BE93C006A51E3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		37A4378D166BE93C006A51E3 /* KVCMappingTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KVCMappingTests.octest;
-			remoteRef = 37A4378C166BE93C006A51E3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		37A43735166BE850006A51E3 /* Resources */ = {

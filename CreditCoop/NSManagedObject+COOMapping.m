@@ -1,63 +1,59 @@
 #import "NSManagedObject+COOMapping.h"
 #import "CreditCoop+Model.h"
 
+@implementation NSManagedObject (Importing)
+- (void) importValues:(NSDictionary*)values_
+{
+    for (NSString * key in values_) { [self importValue:values_[key] forKey:key]; }
+}
+
+- (void) importValue:(id)value_ forKey:(NSString*)key_
+{
+    void (^handler)(NSManagedObject* object, id value) = self.class.coomapping[key_];
+    if(handler) handler(self, value_);
+}
+@end
+#define SIMPLEMAPPING(attributename) (^(NSManagedObject* object, id value){[object setValue:value forKey:(attributename)];})
+
 @implementation COOUser (COOMapping)
 + (NSDictionary*) coomapping
 {
-    return @{
-    @"mail" : @"email",
-    @"label" : @"label",
-    @"lastConnectionDate" : @"lastConnectionDate"};
+    return @{ @"mail" : SIMPLEMAPPING(@"email"),
+              @"label" : SIMPLEMAPPING(@"label"),
+              @"lastConnectionDate" : SIMPLEMAPPING(@"lastConnectionDate")};
 }
 @end
-
 
 @implementation COOAccount (COOMapping)
+
 + (NSDictionary*) coomapping
 {
-    return @{
-    @"accountNumber" : @"number",
-    @"balance" : @"balance",
-    @"balanceDate" : @"balanceDate",
-    @"category" : @"category",
-    @"label" : @"label",
-    };
+    return @{@"accountNumber" : SIMPLEMAPPING(@"number"),
+             @"balance" : SIMPLEMAPPING(@"balance"),
+             @"balanceDate" : SIMPLEMAPPING(@"balanceDate"),
+             @"category" : SIMPLEMAPPING(@"category"),
+             @"label" : SIMPLEMAPPING(@"label"),
+             };
 }
-@end
 
-
-@interface COOOperationDateTransformer : NSValueTransformer
-@end
-@implementation COOOperationDateTransformer
-+ (Class) transformedValueClass { return [NSDate class]; }
-
-- (id) transformedValue:(id)value
-{
-    if(![value isKindOfClass:[NSString class]])
-        return nil;
-    static NSDateFormatter * formatter;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        formatter = [NSDateFormatter new];
-        formatter.dateFormat = @"dd.MM.yy";
-        formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr"];
-    });
-    return [formatter dateFromString:value];
-}
 @end
 
 @implementation COOOperation (COOMapping)
 + (NSDictionary*) coomapping
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [NSValueTransformer setValueTransformer:[COOOperationDateTransformer new] forName:@"OperationDate"];
-    });
-    return @{
-    @"operationAmountSign" : @"amount",
-    @"operationDate" : [NSString stringWithFormat:@"%@:%@",@"OperationDate",@"date"],
-    @"operationLabel1" : @"label1",
-    @"operationLabel2" : @"label2",
-    };
+    return @{@"operationAmountSign" : SIMPLEMAPPING(@"amount"),
+              @"operationLabel1" : SIMPLEMAPPING(@"label1"),
+              @"operationLabel2" : SIMPLEMAPPING(@"label2"),
+              @"operationDate" : ^(NSManagedObject* object, id value){
+                  static NSDateFormatter * formatter;
+                  static dispatch_once_t onceToken;
+                  dispatch_once(&onceToken, ^{
+                      formatter = [NSDateFormatter new];
+                      formatter.dateFormat = @"dd.MM.yy";
+                      formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr"];
+                  });
+                  [object setValue:[formatter dateFromString:value] forKey:@"date"];
+              }
+             };
 }
 @end

@@ -43,12 +43,12 @@
          [self willChangeValueForKey:@"user"];
          
          COOUser * user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.moc];
-         [user setValuesForKeysWithDictionary:userDict withMappingDictionary:[COOUser coomapping]];
+         [user importValues:userDict];
          
          id accounts = userDict[@"accountList"];
          for (id accountDict in accounts) {
              COOAccount * account = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:self.moc];
-             [account setValuesForKeysWithDictionary:accountDict withMappingDictionary:[COOAccount coomapping]];
+             [account importValues:accountDict];
              account.user = user;
              [self refreshAccount:account];
          }
@@ -79,7 +79,7 @@
          id operations = dict[@"beans"][@"operationList"];
          for (id operationDict in operations) {
              COOOperation * operation = [NSEntityDescription insertNewObjectForEntityForName:@"Operation" inManagedObjectContext:self.moc];
-             [operation setValuesForKeysWithDictionary:operationDict withMappingDictionary:[COOOperation coomapping]];
+             [operation importValues:operationDict];
              operation.account = account;
          }
          [self save:NULL];
