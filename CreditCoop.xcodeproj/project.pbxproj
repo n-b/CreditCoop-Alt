@@ -48,7 +48,6 @@
 		37A4375C166BE850006A51E3 /* UserAccountsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAccountsVC.m; sourceTree = "<group>"; };
 		37A4375E166BE850006A51E3 /* AccountOperationsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountOperationsVC.h; sourceTree = "<group>"; };
 		37A4375F166BE850006A51E3 /* AccountOperationsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountOperationsVC.m; sourceTree = "<group>"; };
-		37A43767166BE850006A51E3 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		37A4379A166BEAD2006A51E3 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		37A4379B166BEAD2006A51E3 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		37A4379F166BEAF1006A51E3 /* CreditCoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.h; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 				37A4373D166BE850006A51E3 /* Foundation.framework */,
 				37A4373F166BE850006A51E3 /* CoreGraphics.framework */,
 				37A43741166BE850006A51E3 /* CoreData.framework */,
-				37A43767166BE850006A51E3 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
