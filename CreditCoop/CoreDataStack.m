@@ -1,27 +1,12 @@
-#import "CoreDataManager.h"
-#import <objc/runtime.h>
+#import "CoreDataStack.h"
 
-
-/****************************************************************************/
-#pragma mark Private Methods
-
-@interface CoreDataManager ()
+@interface CoreDataStack ()
 @property NSManagedObjectModel *mom;
 @property NSPersistentStoreCoordinator *psc;
 @property NSManagedObjectContext *moc;
 @end
 
-@interface NSManagedObjectContext (AssociatedManager_Private)
-@property (nonatomic, retain, readwrite) CoreDataManager * coreDataManager;
-@end
-
-/****************************************************************************/
-#pragma mark -
-
-@implementation CoreDataManager
-
-/****************************************************************************/
-#pragma mark Init
+@implementation CoreDataStack
 
 - (id) init
 {
@@ -83,21 +68,8 @@
         self.moc = [NSManagedObjectContext new];
 		self.moc.persistentStoreCoordinator = self.psc;
 		self.moc.undoManager = nil;
-        
-        self.moc.coreDataManager = self;
     }
     return self;
-}
-
-
-/****************************************************************************/
-#pragma mark -
-
-- (void) setNeedsSave
-{
-    NSTimeInterval delay = [[NSUserDefaults standardUserDefaults] doubleForKey:@"ModelSaveDelay"];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(save:) object:nil];
-    [self performSelector:@selector(save:) withObject:nil afterDelay:delay];
 }
 
 - (BOOL) save:(NSError**)saveError
@@ -105,21 +77,4 @@
     return [self.moc save:saveError];
 }
 
-@end
-
-/****************************************************************************/
-#pragma mark -
-
-@implementation NSManagedObjectContext (AssociatedManager)
-static char kCoreDataManager_associatedManagerKey;
-
-- (void) setCoreDataManager:(CoreDataManager*)coreDataManager
-{
-    objc_setAssociatedObject(self, &kCoreDataManager_associatedManagerKey, coreDataManager, OBJC_ASSOCIATION_RETAIN);
-}
-
-- (CoreDataManager*)coreDataManager
-{
-    return objc_getAssociatedObject(self, &kCoreDataManager_associatedManagerKey);
-}
 @end

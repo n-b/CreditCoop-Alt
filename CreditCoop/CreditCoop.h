@@ -1,7 +1,7 @@
-#import "CoreDataManager.h"
+#import "CoreDataStack.h"
 #import "CreditCoop+Model.h"
 
-@interface CreditCoop : CoreDataManager
+@interface CreditCoop : CoreDataStack
 
 - (void) logout;
 

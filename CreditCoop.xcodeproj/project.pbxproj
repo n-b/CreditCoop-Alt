@@ -16,7 +16,7 @@
 		37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A43758166BE850006A51E3 /* CreditCoop.xcdatamodeld */; };
 		37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375C166BE850006A51E3 /* UserAccountsVC.m */; };
 		37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4375F166BE850006A51E3 /* AccountOperationsVC.m */; };
-		37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4379B166BEAD2006A51E3 /* CoreDataManager.m */; };
+		37A4379C166BEAD2006A51E3 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4379B166BEAD2006A51E3 /* CoreDataStack.m */; };
 		37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437A0166BEAF1006A51E3 /* CreditCoop.m */; };
 		37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437C4166BF284006A51E3 /* NSManagedObject+COOMapping.m */; };
 		37A437EE166C0014006A51E3 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A437ED166C0014006A51E3 /* LoginVC.m */; };
@@ -37,8 +37,8 @@
 		37A4375C166BE850006A51E3 /* UserAccountsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserAccountsVC.m; sourceTree = "<group>"; };
 		37A4375E166BE850006A51E3 /* AccountOperationsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountOperationsVC.h; sourceTree = "<group>"; };
 		37A4375F166BE850006A51E3 /* AccountOperationsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountOperationsVC.m; sourceTree = "<group>"; };
-		37A4379A166BEAD2006A51E3 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
-		37A4379B166BEAD2006A51E3 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		37A4379A166BEAD2006A51E3 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		37A4379B166BEAD2006A51E3 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		37A4379F166BEAF1006A51E3 /* CreditCoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCoop.h; sourceTree = "<group>"; };
 		37A437A0166BEAF1006A51E3 /* CreditCoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCoop.m; sourceTree = "<group>"; };
 		37A437C3166BF284006A51E3 /* NSManagedObject+COOMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+COOMapping.h"; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		37A4379E166BEADE006A51E3 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				37A4379A166BEAD2006A51E3 /* CoreDataManager.h */,
-				37A4379B166BEAD2006A51E3 /* CoreDataManager.m */,
+				37A4379A166BEAD2006A51E3 /* CoreDataStack.h */,
+				37A4379B166BEAD2006A51E3 /* CoreDataStack.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */,
 				37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */,
 				37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */,
-				37A4379C166BEAD2006A51E3 /* CoreDataManager.m in Sources */,
+				37A4379C166BEAD2006A51E3 /* CoreDataStack.m in Sources */,
 				37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */,
 				37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
 				3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */,
