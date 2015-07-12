@@ -72,7 +72,9 @@
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:CREDITCOOP_HOST"banque/mob/json/account/detail.action"]];
     [request setHTTPMethod:@"POST"];
     [request addValue:@"Moz" forHTTPHeaderField:@"User-Agent"];
-    [request setHTTPBody:[[NSString stringWithFormat:@"accountNumber=%@&socCode=06&balanceDate=13%%2F11%%2F2012+00%%3A00&beginIndex=0&endIndex=250",account.number]
+    // socCode & balanceDate params seem useless.
+    // beginIndex and endIndex work, but the webservice will not go further back than the 250 most recent operations.
+    [request setHTTPBody:[[NSString stringWithFormat:@"accountNumber=%@&beginIndex=0&endIndex=250",account.number]
                           dataUsingEncoding:NSUTF8StringEncoding]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue currentQueue]
