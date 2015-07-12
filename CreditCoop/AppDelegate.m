@@ -9,16 +9,16 @@
 @property CreditCoop * creditcoop;
 @end
 
-int main(int argc, char *argv[])
+int main(int argc_, char *argv_[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        return UIApplicationMain(argc_, argv_, nil, NSStringFromClass([AppDelegate class]));
     }
 }
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application_ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions_
 {
     self.creditcoop = [CreditCoop new];
     [self.creditcoop logout]; // Force Delete
@@ -65,13 +65,13 @@ int main(int argc, char *argv[])
     }
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath_ ofObject:(id)object_ change:(NSDictionary *)change_ context:(void *)context_
 {
-    if (context == (__bridge void *)([AppDelegate class])) {
-        if(object==self.creditcoop && [keyPath isEqualToString:@"user"])
+    if (context_ == (__bridge void *)([AppDelegate class])) {
+        if(object_==self.creditcoop && [keyPath_ isEqualToString:@"user"])
             [self userDidChange];
     } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        [super observeValueForKeyPath:keyPath_ ofObject:object_ change:change_ context:context_];
     }
 }
 @end

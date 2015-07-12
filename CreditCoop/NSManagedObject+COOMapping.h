@@ -1,9 +1,5 @@
 @import CoreData;
 
-@interface NSManagedObject (Importing)
-- (void) importValues:(NSDictionary*)values_;
-@end
-
-@interface NSManagedObject (COOMapping)
-+ (NSDictionary*) coomapping;
+@interface NSManagedObject (COOImporting)
+- (void)coo_importValues:(NSDictionary*)values_;
 @end

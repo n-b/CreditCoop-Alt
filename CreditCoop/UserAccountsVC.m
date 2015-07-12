@@ -2,6 +2,8 @@
 #import "AccountOperationsVC.h"
 #import "CreditCoop+Model.h"
 
+#pragma mark UserAccountCell
+
 @interface UserAccountCell : UITableViewCell
 @property IBOutlet UILabel * labelLabel;
 @property IBOutlet UILabel * numberLabel;
@@ -12,7 +14,7 @@
 @implementation UserAccountCell
 @end
 
-#pragma mark -
+#pragma mark UserAccountsVC
 
 @interface UserAccountsVC () <NSFetchedResultsControllerDelegate>
 @end
@@ -43,94 +45,91 @@
     NSError * error;
     __unused BOOL ok = [_frc performFetch:&error];
     NSAssert(ok, @"Fetch failed : %@",error);
-
+    
     [self.tableView reloadData];
     
-    self.title = [[[user_.accounts array] valueForKeyPath:@"@sum.balance"] description];
+    self.title = [[user_.accounts valueForKeyPath:@"@sum.balance"] description];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Comptes"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:nil
                                                                             action:nil];
 }
 
-/****************************************************************************/
 #pragma mark NSFetchedResultsControllerDelegate
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller_
 {
-    [[self tableView] beginUpdates];
+    [self.tableView beginUpdates];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+- (void)controller:(NSFetchedResultsController *)controller_ didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo_
+           atIndex:(NSUInteger)sectionIndex_ forChangeType:(NSFetchedResultsChangeType)type_
 {
-    switch(type)
-    {
-        case NSFetchedResultsChangeInsert: [[self tableView] insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeDelete: [[self tableView] deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade]; break;
+    switch(type_) {
+        case NSFetchedResultsChangeInsert: [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        case NSFetchedResultsChangeDelete: [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        default: break;
     }
 }
 
-- (void) controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-       newIndexPath:(NSIndexPath *)newIndexPath
+- (void)controller:(NSFetchedResultsController *)controller_ didChangeObject:(id)anObject_
+       atIndexPath:(NSIndexPath *)indexPath_ forChangeType:(NSFetchedResultsChangeType)type_
+      newIndexPath:(NSIndexPath *)newIndexPath_
 {
-    switch(type)
-    {
-        case NSFetchedResultsChangeInsert: [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeDelete: [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeUpdate: [self configureCell:(UserAccountCell*)[self.tableView cellForRowAtIndexPath:indexPath] withObject:[_frc objectAtIndexPath:indexPath]]; break;
-        case NSFetchedResultsChangeMove: [[self tableView] moveRowAtIndexPath:indexPath toIndexPath:newIndexPath]; break;
+    switch(type_) {
+        case NSFetchedResultsChangeInsert: [self.tableView insertRowsAtIndexPaths:@[newIndexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        case NSFetchedResultsChangeDelete: [self.tableView deleteRowsAtIndexPaths:@[indexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        case NSFetchedResultsChangeUpdate: [self configureCell:(UserAccountCell*)[self.tableView cellForRowAtIndexPath:indexPath_] withObject:[_frc objectAtIndexPath:indexPath_]]; break;
+        case NSFetchedResultsChangeMove: [self.tableView moveRowAtIndexPath:indexPath_ toIndexPath:newIndexPath_]; break;
             break;
     }
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller_
 {
-    [[self tableView] endUpdates];
+    [self.tableView endUpdates];
 }
 
-/****************************************************************************/
 #pragma mark UITableViewDataSource
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)tableView_ titleForHeaderInSection:(NSInteger)section_
 {
-    return [_frc.sections[section] name];
+    return [_frc.sections[section_] name];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView_
 {
     return [_frc.sections count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView_ numberOfRowsInSection:(NSInteger)section_
 {
-    return [_frc.sections[section] numberOfObjects];
+    return [_frc.sections[section_] numberOfObjects];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath_
 {
-    UserAccountCell * cell = (UserAccountCell *)[self.tableView dequeueReusableCellWithIdentifier:@"UserAccountCell" forIndexPath:indexPath];
-    [self configureCell:cell withObject:[_frc objectAtIndexPath:indexPath]];
+    UserAccountCell * cell = (UserAccountCell *)[self.tableView dequeueReusableCellWithIdentifier:@"UserAccountCell" forIndexPath:indexPath_];
+    [self configureCell:cell withObject:[_frc objectAtIndexPath:indexPath_]];
     return cell;
 }
 
-- (void)configureCell:(UserAccountCell *)cell withObject:(COOAccount*)account
+- (void)configureCell:(UserAccountCell *)cell_ withObject:(COOAccount*)account_
 {
-    cell.labelLabel.text = account.label;
-    cell.numberLabel.text = account.number;
-    cell.balanceLabel.text = [account.balance description];
-    cell.balanceDateLabel.text = account.balanceDate;
+    cell_.labelLabel.text = account_.label;
+    cell_.numberLabel.text = account_.number;
+    cell_.balanceLabel.text = [account_.balance description];
+    cell_.balanceDateLabel.text = account_.balanceDate;
 }
 
 #pragma mark -
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue_ sender:(id)sender_
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([segue_.identifier isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         COOAccount *account = [_frc objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setAccount:account];
+        [segue_.destinationViewController setAccount:account];
     }
 }
 

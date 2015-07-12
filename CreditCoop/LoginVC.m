@@ -10,7 +10,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.userCodeField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"CreditCoop.Login.userCode"];
+    self.userCodeField.text = [NSUserDefaults.standardUserDefaults stringForKey:@"CreditCoop.Login.userCode"];
 }
 
 - (IBAction)login
@@ -19,7 +19,7 @@
         if(error)
             [[[UIAlertView alloc] initWithTitle:@"Login Error" message:error delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         else
-            [[NSUserDefaults standardUserDefaults] setObject:self.userCodeField.text forKey:@"CreditCoop.Login.userCode"];
+            [NSUserDefaults.standardUserDefaults setObject:self.userCodeField.text forKey:@"CreditCoop.Login.userCode"];
     }];
 }
 
