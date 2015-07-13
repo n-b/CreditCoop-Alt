@@ -1,11 +1,3 @@
-//
-//  FRCVC.m
-//
-//
-//  Created by Nicolas on 03/12/12.
-//  
-//
-
 #import "FRCVC.h"
 
 @interface FRCVC () <NSFetchedResultsControllerDelegate>
@@ -17,40 +9,16 @@
 @implementation FRCVC
 {
     NSFetchedResultsController * _frc;
-    Class _cellClass;
-    UINib * _cellNib;
     NSString* _cellReuseIdentifier;
 }
 
-- (void) setEntityName:(NSString*)entityName_
-               context:(NSManagedObjectContext*)context_
-             predicate:(NSPredicate*)predicate_
-       sortDescriptors:(NSArray*)sortDescriptors_
-             cellClass:(Class)cellClass_
-   cellReuseIdentifier:(NSString*)cellReuseIdentifier_
+- (void)setEntityName:(NSString*)entityName_
+              context:(NSManagedObjectContext*)context_
+            predicate:(NSPredicate*)predicate_
+      sortDescriptors:(NSArray*)sortDescriptors_
+   sectionNameKeyPath:(NSString*)sectionNameKeyPath_
+  cellReuseIdentifier:(NSString*)cellReuseIdentifier_
 {
-    [self setEntityName:entityName_ context:context_ predicate:predicate_ sortDescriptors:sortDescriptors_ cellClass:cellClass_ cellNib:nil cellReuseIdentifier:cellReuseIdentifier_];
-}
-
-- (void) setEntityName:(NSString*)entityName_
-               context:(NSManagedObjectContext*)context_
-             predicate:(NSPredicate*)predicate_
-       sortDescriptors:(NSArray*)sortDescriptors_
-               cellNib:(UINib*)cellNib_
-   cellReuseIdentifier:(NSString*)cellReuseIdentifier_
-{
-    [self setEntityName:entityName_ context:context_ predicate:predicate_ sortDescriptors:sortDescriptors_ cellClass:nil cellNib:cellNib_ cellReuseIdentifier:cellReuseIdentifier_];
-}
-
-- (void) setEntityName:(NSString*)entityName_
-               context:(NSManagedObjectContext*)context_
-             predicate:(NSPredicate*)predicate_
-       sortDescriptors:(NSArray*)sortDescriptors_
-             cellClass:(Class)cellClass_
-               cellNib:(UINib*)cellNib_
-   cellReuseIdentifier:(NSString*)cellReuseIdentifier_
-{
-    // Prepare FRC
     NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName_];
     fetchRequest.predicate = predicate_;
     fetchRequest.sortDescriptors = sortDescriptors_;
@@ -58,7 +26,7 @@
     _frc = [[NSFetchedResultsController alloc]
             initWithFetchRequest:fetchRequest
             managedObjectContext:context_
-            sectionNameKeyPath:nil
+            sectionNameKeyPath:sectionNameKeyPath_
             cacheName:nil];
     _frc.delegate = self;
     
@@ -66,88 +34,68 @@
     __unused BOOL ok = [_frc performFetch:&error];
     NSAssert(ok, @"Fetch failed : %@",error);
     
-    // Register Cell
     _cellReuseIdentifier = cellReuseIdentifier_;
-    if([self isViewLoaded])
-    {
-        if(cellClass_)
-            [[self tableView] registerClass:cellClass_ forCellReuseIdentifier:_cellReuseIdentifier];
-        if(cellNib_)
-            [[self tableView] registerNib:cellNib_ forCellReuseIdentifier:_cellReuseIdentifier];
-    }
-    else
-    {
-        _cellClass = cellClass_;
-        _cellNib = cellNib_;
-    }
 
-    // Reload
-    [[self tableView] reloadData];
+    if(self.isViewLoaded) {
+        [self.tableView reloadData];
+    }
 }
 
-- (void) viewDidLoad
-{
-    [super viewDidLoad];
-    if(_cellClass)
-        [[self tableView] registerClass:_cellClass forCellReuseIdentifier:_cellReuseIdentifier];
-    if(_cellNib)
-        [[self tableView] registerNib:_cellNib forCellReuseIdentifier:_cellReuseIdentifier];
-}
-
-/****************************************************************************/
 #pragma mark NSFetchedResultsControllerDelegate
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller_
 {
-    [[self tableView] beginUpdates];
+    [self.tableView beginUpdates];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+- (void)controller:(NSFetchedResultsController *)controller_ didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo_
+           atIndex:(NSUInteger)sectionIndex_ forChangeType:(NSFetchedResultsChangeType)type_
 {
-    switch(type)
-    {
-        case NSFetchedResultsChangeInsert: [[self tableView] insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeDelete: [[self tableView] deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade]; break;
+    switch(type_) {
+        case NSFetchedResultsChangeInsert: [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        case NSFetchedResultsChangeDelete: [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        default: break;
     }
 }
 
-- (void) controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-       newIndexPath:(NSIndexPath *)newIndexPath
+- (void)controller:(NSFetchedResultsController *)controller_ didChangeObject:(id)anObject_
+       atIndexPath:(NSIndexPath *)indexPath_ forChangeType:(NSFetchedResultsChangeType)type_
+      newIndexPath:(NSIndexPath *)newIndexPath_
 {
-    switch(type)
-    {
-        case NSFetchedResultsChangeInsert: [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeDelete: [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeUpdate: [self configureCell:[[self tableView] cellForRowAtIndexPath:indexPath] withObject:[_frc objectAtIndexPath:indexPath]]; break;
-        case NSFetchedResultsChangeMove: [[self tableView] moveRowAtIndexPath:indexPath toIndexPath:newIndexPath]; break;
-            break;
+    switch(type_) {
+        case NSFetchedResultsChangeInsert: [self.tableView insertRowsAtIndexPaths:@[newIndexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        case NSFetchedResultsChangeDelete: [self.tableView deleteRowsAtIndexPaths:@[indexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        case NSFetchedResultsChangeUpdate: [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath_] withObject:[_frc objectAtIndexPath:indexPath_]]; break;
+        case NSFetchedResultsChangeMove: [self.tableView moveRowAtIndexPath:indexPath_ toIndexPath:newIndexPath_]; break;
     }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [[self tableView] endUpdates];
+    [self.tableView endUpdates];
 }
 
-/****************************************************************************/
 #pragma mark UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section_
 {
-    return [_frc.sections count];
+    return _frc.sections[section_].name;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView_
 {
-    return [_frc.sections[section] numberOfObjects];
+    return _frc.sections.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)tableView:(UITableView *)tableView_ numberOfRowsInSection:(NSInteger)section_
 {
-    UITableViewCell * cell = [[self tableView] dequeueReusableCellWithIdentifier:_cellReuseIdentifier forIndexPath:indexPath];
-    [self configureCell:cell withObject:[_frc objectAtIndexPath:indexPath]];
+    return _frc.sections[section_].numberOfObjects;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView_ cellForRowAtIndexPath:(NSIndexPath *)indexPath_
+{
+    UITableViewCell * cell = [self.tableView dequeueReusableCellWithIdentifier:_cellReuseIdentifier forIndexPath:indexPath_];
+    [self configureCell:cell withObject:[_frc objectAtIndexPath:indexPath_]];
     return cell;
 }
 

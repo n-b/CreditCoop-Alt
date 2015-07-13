@@ -1,8 +1,7 @@
-@import UIKit;
-
 #import "CreditCoop+Model.h"
+#import "FRCVC.h"
 
-@interface UserAccountsVC : UITableViewController
+@interface UserAccountsVC : FRCVC
 
 - (void) setUser:(COOUser*)user_;
 

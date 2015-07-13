@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */; };
+		3792AE421B5391D9006BE1E9 /* FRCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792AE411B5391D9006BE1E9 /* FRCVC.m */; };
 		37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4374D166BE850006A51E3 /* AppDelegate.m */; };
 		37A43750166BE850006A51E3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A4374F166BE850006A51E3 /* Default.png */; };
 		37A43752166BE850006A51E3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37A43751166BE850006A51E3 /* Default@2x.png */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		3792AE361B5272CC006BE1E9 /* CreditCoop+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCoop+Model.h"; sourceTree = "<group>"; };
 		3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCoop+Model.m"; sourceTree = "<group>"; };
+		3792AE401B5391D9006BE1E9 /* FRCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCVC.h; sourceTree = "<group>"; };
+		3792AE411B5391D9006BE1E9 /* FRCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRCVC.m; sourceTree = "<group>"; };
 		37A43737166BE850006A51E3 /* CreditCoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A43745166BE850006A51E3 /* CreditCoop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CreditCoop-Info.plist"; sourceTree = "<group>"; };
 		37A4374D166BE850006A51E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 			children = (
 				37A4379A166BEAD2006A51E3 /* CoreDataStack.h */,
 				37A4379B166BEAD2006A51E3 /* CoreDataStack.m */,
+				3792AE401B5391D9006BE1E9 /* FRCVC.h */,
+				3792AE411B5391D9006BE1E9 /* FRCVC.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 			files = (
 				37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */,
 				37A4375A166BE850006A51E3 /* CreditCoop.xcdatamodeld in Sources */,
+				3792AE421B5391D9006BE1E9 /* FRCVC.m in Sources */,
 				37A4375D166BE850006A51E3 /* UserAccountsVC.m in Sources */,
 				37A43760166BE850006A51E3 /* AccountOperationsVC.m in Sources */,
 				37A4379C166BEAD2006A51E3 /* CoreDataStack.m in Sources */,
