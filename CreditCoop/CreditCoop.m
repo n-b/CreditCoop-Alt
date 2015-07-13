@@ -4,7 +4,7 @@
 
 #define CREDITCOOP_HOST @"https://mobile.credit-cooperatif.coop/"
 
-typedef NSError*__nullable(^CompletionBlock)(NSDictionary*__nonnull dict);
+typedef NSError*(^CompletionBlock)(NSDictionary*__nonnull dict);
 
 @implementation CreditCoop
 {
@@ -91,7 +91,7 @@ typedef NSError*__nullable(^CompletionBlock)(NSDictionary*__nonnull dict);
     [self makeRequest:@"banque/mob/json/user/sesamAuthenticate.action"
         withArguments:@{@"userCode":userCode_,
                         @"sesam":sesame_}
-           completion:^NSError*__nullable(NSDictionary*__nonnull dict)
+           completion:^NSError*(NSDictionary*__nonnull dict)
     {
          id userDict = dict[@"beans"][@"user"];
          if(userDict==nil) {
@@ -121,7 +121,7 @@ typedef NSError*__nullable(^CompletionBlock)(NSDictionary*__nonnull dict);
     [self makeRequest:@"banque/mob/json/account/detail.action"
         withArguments:@{@"accountNumber":account_.number,
                         @"beginIndex":@"0", @"endIndex":@"250"}
-           completion:^NSError*__nullable(NSDictionary*__nonnull dict)
+           completion:^NSError*(NSDictionary*__nonnull dict)
      {
                if(![dict[@"beans"][@"operationList"] isEqual:dict[@"beans"][@"creditOperationList"]]) {
                    return [NSError errorWithDomain:@"OUCH" code:3 userInfo:nil];
