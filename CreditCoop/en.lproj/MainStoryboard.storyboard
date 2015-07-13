@@ -151,6 +151,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="&lt;sum&gt;" id="36">
                         <barButtonItem key="backBarButtonItem" title="Comptes" id="YW4-Kw-R4E"/>
+                        <barButtonItem key="rightBarButtonItem" title="Déconnexion" id="hp1-OM-deQ">
+                            <connections>
+                                <action selector="logout" destination="17" id="HbH-XY-bNd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
