@@ -149,7 +149,9 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Comptes" id="36"/>
+                    <navigationItem key="navigationItem" title="&lt;sum&gt;" id="36">
+                        <barButtonItem key="backBarButtonItem" title="Comptes" id="YW4-Kw-R4E"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>

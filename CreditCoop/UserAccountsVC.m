@@ -49,10 +49,6 @@
     [self.tableView reloadData];
     
     self.title = [[user_.accounts valueForKeyPath:@"@sum.balance"] description];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Comptes"
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:nil
-                                                                            action:nil];
 }
 
 #pragma mark NSFetchedResultsControllerDelegate
