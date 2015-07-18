@@ -65,7 +65,7 @@
         }
 		
         // Create moc
-        self.moc = [NSManagedObjectContext new];
+        self.moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
 		self.moc.persistentStoreCoordinator = self.psc;
 		self.moc.undoManager = nil;
     }
