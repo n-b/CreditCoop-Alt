@@ -23,10 +23,10 @@ int main(int argc_, char *argv_[])
     self.creditcoop = [CreditCoop new];
     [self.creditcoop logout]; // Force Delete
     
-    dispatch_async(dispatch_get_main_queue(), ^(void){
-        [self setLoginVCAnimated:NO];
-        [self.creditcoop addObserver:self forKeyPath:@"user" options:0 context:__FILE__];
-    });
+    [self.window makeKeyAndVisible];
+    
+    [self setLoginVCAnimated:NO];
+    [self.creditcoop addObserver:self forKeyPath:@"user" options:0 context:__FILE__];
     return YES;
 }
 
@@ -59,4 +59,5 @@ int main(int argc_, char *argv_[])
         [super observeValueForKeyPath:keyPath_ ofObject:object_ change:change_ context:context_];
     }
 }
+
 @end
