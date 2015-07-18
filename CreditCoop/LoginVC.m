@@ -1,25 +1,52 @@
 #import "LoginVC.h"
 
-@interface LoginVC ()
-@property IBOutlet UITextField * userCodeField;
-@property IBOutlet UITextField * sesameField;
-@end
-
 @implementation LoginVC
+{
+    IBOutlet UITextField * _userCodeField;
+    IBOutlet UITextField * _sesameField;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.userCodeField.text = [NSUserDefaults.standardUserDefaults stringForKey:@"CreditCoop.Login.userCode"];
+    
+    _sesameField.rightViewMode = UITextFieldViewModeAlways;
+    
+    NSString * userCode = [NSUserDefaults.standardUserDefaults stringForKey:@"CreditCoop.Login.userCode"];
+    _userCodeField.text = userCode;
+    [(userCode?_userCodeField:_sesameField) becomeFirstResponder];
 }
 
 - (IBAction)login
 {
-    [self.creditcoop loginWithUserCode:self.userCodeField.text sesame:self.sesameField.text completion:^(BOOL success) {
+    NSString * userCode = _userCodeField.text;
+    NSString * sesame = _sesameField.text;
+    [self.creditcoop loginWithUserCode:userCode sesame:sesame completion:^(BOOL success) {
         if(success) {
-            [NSUserDefaults.standardUserDefaults setObject:self.userCodeField.text forKey:@"CreditCoop.Login.userCode"];
+            [NSUserDefaults.standardUserDefaults setObject:userCode forKey:@"CreditCoop.Login.userCode"];
         }
     }];
 }
 
+@end
+
+
+@implementation UIControl (FirstResponderIBAction)
+- (IBAction) pleaseBecomeFirstResponder
+{
+    [self becomeFirstResponder];
+}
+@end
+
+
+@interface UITextField (More)
+@property(nullable, nonatomic,strong) IBOutlet UIView *rightView;
+@end
+
+
+@implementation UITextField (Yo)
+- (IBAction) switchSecureText
+{
+    self.secureTextEntry = !self.secureTextEntry;
+}
 @end

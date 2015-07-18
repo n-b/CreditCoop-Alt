@@ -2,6 +2,6 @@
 
 #import "CreditCoop.h"
 
-@interface LoginVC : UIViewController
+@interface LoginVC : UITableViewController
 @property CreditCoop * creditcoop;
 @end

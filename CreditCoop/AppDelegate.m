@@ -45,9 +45,9 @@ int main(int argc_, char *argv_[])
     if(user) {
         [self.window.rootViewController dismissViewControllerAnimated:animated_ completion:nil];
     } else {
-        LoginVC * loginVC = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Login"];
-        loginVC.creditcoop = self.creditcoop;
-        [self.window.rootViewController presentViewController:loginVC animated:animated_ completion:nil];
+        UINavigationController * loginNavC = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Login"];
+        ((LoginVC*)loginNavC.visibleViewController).creditcoop = self.creditcoop;
+        [self.window.rootViewController presentViewController:loginNavC animated:animated_ completion:nil];
     }
 }
 
