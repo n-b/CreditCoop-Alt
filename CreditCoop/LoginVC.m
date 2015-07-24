@@ -13,9 +13,12 @@
 @end
 
 @implementation UITextField (Yo)
-- (IBAction)switchSecureText
+- (IBAction)switchSecureText:(UIButton*)sender_
 {
+    [self resignFirstResponder]; // prevent the font and caret from going bonkers
     self.secureTextEntry = !self.secureTextEntry;
+    [self becomeFirstResponder];
+    [sender_ setTitle:self.secureTextEntry?@"🙈":@"🐵" forState:UIControlStateNormal];
 }
 @end
 
@@ -46,7 +49,11 @@
     
     NSString * userCode = [NSUserDefaults.standardUserDefaults stringForKey:@"CreditCoop.Login.userCode"];
     _userCodeField.text = userCode;
-    [(userCode?_userCodeField:_sesameField) becomeFirstResponder];
+    [(userCode?_sesameField:_userCodeField) becomeFirstResponder];
+    
+#if DEBUG
+    _sesameField.text = [NSUserDefaults.standardUserDefaults stringForKey:@"CreditCoop.Debug.Login.sesame"];
+#endif
 }
 
 - (IBAction)login
