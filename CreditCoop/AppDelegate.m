@@ -23,10 +23,12 @@ int main(int argc_, char *argv_[])
     self.creditcoop = [CreditCoop new];
     [self.creditcoop logout]; // Force Delete
     
-    [self.window makeKeyAndVisible];
-    
-    [self setLoginVCAnimated:NO];
-    [self.creditcoop addObserver:self forKeyPath:@"user" options:0 context:__FILE__];
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    LoginVC *controller = (LoginVC *)navigationController.topViewController;
+    controller.creditcoop = self.creditcoop;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.creditcoop addObserver:self forKeyPath:@"user" options:NSKeyValueObservingOptionInitial context:__FILE__];
+    });
     return YES;
 }
 
@@ -35,26 +37,21 @@ int main(int argc_, char *argv_[])
     [self.creditcoop logout];
 }
 
-- (void)setLoginVCAnimated:(BOOL)animated_
+- (void)setLoginVisibleAnimated:(BOOL)animated_
 {
-    COOUser * user = self.creditcoop.user;
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    UserAccountsVC *controller = (UserAccountsVC *)navigationController.topViewController;
-    controller.user = user;
-    
-    if(user) {
-        [self.window.rootViewController dismissViewControllerAnimated:animated_ completion:nil];
+    if(self.creditcoop.user) {
+        UINavigationController * accountsNavC = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"UserAccounts"];
+        ((UserAccountsVC*)accountsNavC.visibleViewController).user = self.creditcoop.user;
+        [self.window.rootViewController presentViewController:accountsNavC animated:animated_ completion:nil];
     } else {
-        UINavigationController * loginNavC = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Login"];
-        ((LoginVC*)loginNavC.visibleViewController).creditcoop = self.creditcoop;
-        [self.window.rootViewController presentViewController:loginNavC animated:animated_ completion:nil];
+        [self.window.rootViewController dismissViewControllerAnimated:animated_ completion:nil];
     }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath_ ofObject:(id)object_ change:(NSDictionary *)change_ context:(void *)context_
 {
     if (context_==__FILE__) {
-        [self setLoginVCAnimated:YES];
+        [self setLoginVisibleAnimated:YES];
     } else {
         [super observeValueForKeyPath:keyPath_ ofObject:object_ change:change_ context:context_];
     }

@@ -51,13 +51,14 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
     NSURLComponents * comps = [NSURLComponents new];
     comps.queryItems = queryItems;
     request.HTTPBody = [comps.query dataUsingEncoding:NSUTF8StringEncoding];
-    [[_urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-      {
-          error = [self handleResultWithData:data response:response error:error parsing:parsing_];
-          [self refreshActivityIndicator];
-          dispatch_async(dispatch_get_main_queue(), ^{ completion_(error); });
-      }
-      ] resume];
+    [[_urlSession dataTaskWithRequest:request
+                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *networkError) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            NSError * error = [self handleResultWithData:data response:response error:networkError parsing:parsing_];
+                            [self refreshActivityIndicator];
+                            completion_(error);
+                        });
+                    }] resume];
     [self refreshActivityIndicator];
 }
 
