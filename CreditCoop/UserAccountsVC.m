@@ -18,6 +18,13 @@
 
 @implementation UserAccountsVC
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.tableView.estimatedRowHeight = 69;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
 - (void) setUser:(COOUser *)user_
 {
     if (nil==user_) {

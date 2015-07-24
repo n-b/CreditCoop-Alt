@@ -17,6 +17,13 @@
 
 @implementation AccountOperationsVC
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 69;
+}
+
 - (void)setAccount:(COOAccount *)account_
 {
     if (nil==account_) {
