@@ -21,7 +21,6 @@ int main(int argc_, char *argv_[])
 - (BOOL)application:(UIApplication *)application_ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions_
 {
     self.creditcoop = [CreditCoop new];
-    [self.creditcoop logout]; // Force Delete
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     LoginVC *controller = (LoginVC *)navigationController.topViewController;
