@@ -1,12 +1,13 @@
 #import "UserAccountsVC.h"
 #import "AccountOperationsVC.h"
 #import "CreditCoop+Model.h"
+#import "CreditCoop+ViewModels.h"
 
 #pragma mark UserAccountCell
 
 @interface UserAccountCell : UITableViewCell
-@property IBOutlet UILabel * labelLabel;
-@property IBOutlet UILabel * numberLabel;
+@property IBOutlet UILabel * titleLabel;
+@property IBOutlet UILabel * detailLabel;
 @property IBOutlet UILabel * balanceLabel;
 @property IBOutlet UILabel * balanceDateLabel;
 @end
@@ -44,10 +45,11 @@
 
 - (void)configureCell:(UserAccountCell *)cell_ withObject:(COOAccount*)account_
 {
-    cell_.labelLabel.text = account_.label;
-    cell_.numberLabel.text = account_.number;
-    cell_.balanceLabel.text = account_.balance.description;
-    cell_.balanceDateLabel.text = account_.balanceDate;
+    NSDictionary * vm = account_.viewModel;
+    cell_.titleLabel.text = vm[@"title"];
+    cell_.detailLabel.text = vm[@"subtitle"];
+    cell_.balanceLabel.text = vm[@"amount"];
+    cell_.balanceDateLabel.text = vm[@"date"];
 }
 
 #pragma mark -

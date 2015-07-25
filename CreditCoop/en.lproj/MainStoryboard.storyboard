@@ -180,7 +180,7 @@
                                                 </mask>
                                             </variation>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="au 99/99/9999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weD-tt-5Ne">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="99/99/9999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weD-tt-5Ne">
                                             <rect key="frame" x="458" y="35.5" width="105" height="17"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
@@ -241,8 +241,8 @@
                                 <connections>
                                     <outlet property="balanceDateLabel" destination="weD-tt-5Ne" id="y7f-Mj-vB7"/>
                                     <outlet property="balanceLabel" destination="1z7-dx-fFO" id="2sl-gH-fpq"/>
-                                    <outlet property="labelLabel" destination="43t-wl-Lf8" id="sRo-4V-30y"/>
-                                    <outlet property="numberLabel" destination="m3C-SJ-ZHv" id="e8e-Jv-Lka"/>
+                                    <outlet property="detailLabel" destination="m3C-SJ-ZHv" id="RXK-j0-6sJ"/>
+                                    <outlet property="titleLabel" destination="43t-wl-Lf8" id="Vza-SJ-WUA"/>
                                     <segue destination="6Rj-bI-7Il" kind="show" identifier="showDetail" id="YhT-wl-Fiy"/>
                                 </connections>
                             </tableViewCell>
@@ -329,8 +329,8 @@ Label1</string>
                                 <animations/>
                                 <connections>
                                     <outlet property="amountLabel" destination="KIz-u8-Ii9" id="U5G-Zw-Zt4"/>
-                                    <outlet property="label1Label" destination="nDv-4O-Abh" id="GWK-tH-bfi"/>
-                                    <outlet property="label2Label" destination="lKb-Sq-cOS" id="1r7-ZX-dbs"/>
+                                    <outlet property="detailLabel" destination="lKb-Sq-cOS" id="ip3-ZY-gzh"/>
+                                    <outlet property="titleLabel" destination="nDv-4O-Abh" id="hys-zK-bAK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

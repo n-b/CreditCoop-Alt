@@ -1,13 +1,13 @@
 #import "AccountOperationsVC.h"
 #import "CreditCoop+Model.h"
+#import "CreditCoop+ViewModels.h"
 
 #pragma mark AccountOperationCell
 
 @interface AccountOperationCell : UITableViewCell
 @property IBOutlet UILabel * amountLabel;
-@property IBOutlet UILabel * label1Label;
-@property IBOutlet UILabel * label2Label;
-@property IBOutlet UILabel * dateLabel;
+@property IBOutlet UILabel * titleLabel;
+@property IBOutlet UILabel * detailLabel;
 @end
 
 @implementation AccountOperationCell
@@ -35,16 +35,21 @@
               predicate:[NSPredicate predicateWithFormat:@"%K == %@",@"account", account_]
         sortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO],
                           [[NSSortDescriptor alloc] initWithKey:@"amount" ascending:NO]]
-     sectionNameKeyPath:@"date"
+     sectionNameKeyPath:@"dayDescription"
     cellReuseIdentifier:@"AccountOperationCell"];
+    
+    NSDictionary * vm = account_.viewModel;
+    self.title = vm[@"subtitle"];
+    self.navigationItem.prompt = vm[@"amount"];
 }
 
 - (void)configureCell:(AccountOperationCell *)cell_ withObject:(COOOperation*)operation_
 {
-    cell_.amountLabel.text = operation_.amount.description;
-    cell_.label1Label.text = operation_.label1;
-    cell_.label2Label.text = operation_.label2;
-    cell_.dateLabel.text = operation_.date.description;
+    NSDictionary * vm = operation_.viewModel;
+    cell_.titleLabel.text = vm[@"title"];
+    cell_.detailLabel.text = vm[@"subtitle"];
+    cell_.amountLabel.text = vm[@"amount"];
+    cell_.amountLabel.textColor = vm[@"amountColor"];
 }
 
 @end
