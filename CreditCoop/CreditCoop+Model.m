@@ -9,5 +9,9 @@
 @end
 
 @implementation COOOperation
-@dynamic amount, date, label1, label2, account;
+@dynamic amount, date, label1, label2, account, day;
+@end
+
+@implementation COODay
+@dynamic balance, date, operations;
 @end

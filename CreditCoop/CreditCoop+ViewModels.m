@@ -1,6 +1,5 @@
 #import "CreditCoop+ViewModels.h"
 #import "CreditCoop.h"
-#import "CreditCoop+Values.h"
 @import UIKit;
 
 @implementation CreditCoop (ViewModels)
@@ -44,10 +43,12 @@
              @"date":[CreditCoop stringFromDate:self.date],
              @"amountColor":[CreditCoop colorFromAmount:self.amount]};
 }
-- (NSString*)dayDescription
+@end
+
+@implementation COODay (ViewModel)
+- (NSDictionary*)viewModel
 {
-    return [NSString stringWithFormat:@"%@ %@",
-            [CreditCoop stringFromDate:self.date],
-            [CreditCoop stringFromAmount:[self.account balanceAt:self.date]]];
+    return @{@"title":[CreditCoop stringFromDate:self.date],
+             @"amount":[CreditCoop stringFromAmount:self.balance]};
 }
 @end

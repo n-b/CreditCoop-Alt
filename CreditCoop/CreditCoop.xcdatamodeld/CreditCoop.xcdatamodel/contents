@@ -9,12 +9,18 @@
         <relationship name="operations" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Operation" inverseName="account" inverseEntity="Operation" syncable="YES"/>
         <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="accounts" inverseEntity="User" syncable="YES"/>
     </entity>
+    <entity name="Day" representedClassName="COODay" syncable="YES">
+        <attribute name="balance" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="operations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Operation" inverseName="day" inverseEntity="Operation" syncable="YES"/>
+    </entity>
     <entity name="Operation" representedClassName="COOOperation" syncable="YES">
         <attribute name="amount" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="label1" attributeType="String" syncable="YES"/>
         <attribute name="label2" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="account" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="operations" inverseEntity="Account" syncable="YES"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="operations" inverseEntity="Day" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="COOUser" syncable="YES">
         <attribute name="email" attributeType="String" syncable="YES"/>
@@ -24,7 +30,8 @@
     </entity>
     <elements>
         <element name="Account" positionX="0" positionY="0" width="128" height="150"/>
-        <element name="Operation" positionX="196" positionY="15" width="128" height="120"/>
+        <element name="Operation" positionX="196" positionY="15" width="128" height="135"/>
         <element name="User" positionX="-218" positionY="45" width="128" height="103"/>
+        <element name="Day" positionX="-9" positionY="63" width="128" height="90"/>
     </elements>
 </model>

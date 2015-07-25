@@ -35,12 +35,18 @@
               predicate:[NSPredicate predicateWithFormat:@"%K == %@",@"account", account_]
         sortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO],
                           [[NSSortDescriptor alloc] initWithKey:@"amount" ascending:NO]]
-     sectionNameKeyPath:@"dayDescription"
+     sectionNameKeyPath:@"date"
     cellReuseIdentifier:@"AccountOperationCell"];
     
     NSDictionary * vm = account_.viewModel;
     self.title = vm[@"subtitle"];
-    self.navigationItem.prompt = vm[@"amount"];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section_
+{
+    COOOperation * operation = self.frc.sections[section_].objects.firstObject;
+    NSDictionary * vm = operation.day.viewModel;
+    return [NSString stringWithFormat:@"%@\n%@",vm[@"title"],vm[@"amount"]];
 }
 
 - (void)configureCell:(AccountOperationCell *)cell_ withObject:(COOOperation*)operation_

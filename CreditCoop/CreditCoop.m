@@ -1,5 +1,6 @@
 #import "CreditCoop.h"
 #import "NSManagedObject+COOMapping.h"
+#import "CreditCoop+Days.h"
 @import UIKit;
 
 #define CREDITCOOP_HOST @"https://mobile.credit-cooperatif.coop/"
@@ -135,6 +136,8 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
                       [operation coo_importValues:operationDict];
                       operation.account = account_;
                   }
+                  [account_ makeDays];
+
                   return nil;
               }
            completion:completion_];

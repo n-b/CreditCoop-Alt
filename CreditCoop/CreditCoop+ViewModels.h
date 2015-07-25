@@ -6,5 +6,8 @@
 
 @interface COOOperation (ViewModel)
 - (NSDictionary*)viewModel;
-- (NSString*)dayDescription;
+@end
+
+@interface COODay (ViewModel)
+- (NSDictionary*)viewModel;
 @end
