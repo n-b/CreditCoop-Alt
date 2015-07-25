@@ -36,7 +36,15 @@ typedef NSDictionary<NSString *,MappingHandler> MappingDictionary;
 {
     return @{@"accountNumber" : SIMPLEMAPPING(@"number"),
              @"balance" : SIMPLEMAPPING(@"balance"),
-             @"balanceDate" : SIMPLEMAPPING(@"balanceDate"),
+             @"balanceDate" : ^(NSManagedObject* object, id value){
+                 static NSDateFormatter * formatter;
+                 static dispatch_once_t onceToken;
+                 dispatch_once(&onceToken, ^{
+                     formatter = [NSDateFormatter new];
+                     formatter.dateFormat = @"dd/MM/yy HH:mm";
+                 });
+                 [object setValue:[formatter dateFromString:value] forKey:@"balanceDate"];
+             },
              @"category" : SIMPLEMAPPING(@"category"),
              @"label" : SIMPLEMAPPING(@"label"),
              };
@@ -55,7 +63,6 @@ typedef NSDictionary<NSString *,MappingHandler> MappingDictionary;
                  dispatch_once(&onceToken, ^{
                      formatter = [NSDateFormatter new];
                      formatter.dateFormat = @"dd.MM.yy";
-                     formatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr"];
                  });
                  [object setValue:[formatter dateFromString:value] forKey:@"date"];
              }
