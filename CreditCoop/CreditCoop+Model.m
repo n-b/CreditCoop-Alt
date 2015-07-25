@@ -9,7 +9,11 @@
 @end
 
 @implementation COOOperation
-@dynamic amount, date, label1, label2, account, day;
+@dynamic amount, date, label1, label2, account, attributes, day;
+@end
+
+@implementation COOOperationAttributes
+@dynamic actualDate, cleanName, lastDigits, originalAmount, originalCountry, originalCurrency, type, operation;
 @end
 
 @implementation COODay

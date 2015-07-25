@@ -1,6 +1,6 @@
 #import <CoreData/CoreData.h>
 
-@class COOUser, COOAccount, COOOperation, COODay;
+@class COOUser, COOAccount, COOOperation, COOOperationAttributes, COODay;
 
 @interface COOUser : NSManagedObject
 @property (nonatomic, strong) NSString* email;
@@ -25,7 +25,19 @@
 @property (nonatomic, strong) NSString* label1;
 @property (nonatomic, strong) NSString* label2;
 @property (nonatomic, strong) COOAccount *account;
+@property (nonatomic, strong) COOOperationAttributes *attributes;
 @property (nonatomic, strong) COODay *day;
+@end
+
+@interface COOOperationAttributes : NSManagedObject
+@property (nonatomic, strong) NSString* actualDate;
+@property (nonatomic, strong) NSString* cleanName;
+@property (nonatomic, strong) NSString* lastDigits;
+@property (nonatomic, strong) NSString* originalAmount;
+@property (nonatomic, strong) NSString* originalCountry;
+@property (nonatomic, strong) NSString* originalCurrency;
+@property (nonatomic, strong) NSString* type;
+@property (nonatomic, strong) COOOperation *operation;
 @end
 
 @interface COODay : NSManagedObject

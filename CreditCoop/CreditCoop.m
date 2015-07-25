@@ -1,5 +1,6 @@
 #import "CreditCoop.h"
 #import "NSManagedObject+COOMapping.h"
+#import "CreditCoop+Magic.h"
 #import "CreditCoop+Days.h"
 @import UIKit;
 
@@ -135,6 +136,7 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
                       COOOperation * operation = [NSEntityDescription insertNewObjectForEntityForName:@"Operation" inManagedObjectContext:self.moc];
                       [operation coo_importValues:operationDict];
                       operation.account = account_;
+                      [operation makeAttributes];
                   }
                   [account_ makeDays];
 
