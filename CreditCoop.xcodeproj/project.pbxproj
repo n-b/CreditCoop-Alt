@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370753181B6302CA00150427 /* CreditCoop+ViewModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 370753171B6302CA00150427 /* CreditCoop+ViewModels.m */; };
+		3738993B1B63130E00389937 /* CreditCoop+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = 3738993A1B63130E00389937 /* CreditCoop+Values.m */; };
 		3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */; };
 		3792AE421B5391D9006BE1E9 /* FRCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3792AE411B5391D9006BE1E9 /* FRCVC.m */; };
 		37A4374E166BE850006A51E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A4374D166BE850006A51E3 /* AppDelegate.m */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		370753161B6302CA00150427 /* CreditCoop+ViewModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCoop+ViewModels.h"; sourceTree = "<group>"; };
 		370753171B6302CA00150427 /* CreditCoop+ViewModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCoop+ViewModels.m"; sourceTree = "<group>"; };
+		373899391B63130D00389937 /* CreditCoop+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCoop+Values.h"; sourceTree = "<group>"; };
+		3738993A1B63130E00389937 /* CreditCoop+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCoop+Values.m"; sourceTree = "<group>"; };
 		3792AE361B5272CC006BE1E9 /* CreditCoop+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CreditCoop+Model.h"; sourceTree = "<group>"; };
 		3792AE371B5272CC006BE1E9 /* CreditCoop+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CreditCoop+Model.m"; sourceTree = "<group>"; };
 		3792AE401B5391D9006BE1E9 /* FRCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRCVC.h; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				37A4375F166BE850006A51E3 /* AccountOperationsVC.m */,
 				370753161B6302CA00150427 /* CreditCoop+ViewModels.h */,
 				370753171B6302CA00150427 /* CreditCoop+ViewModels.m */,
+				373899391B63130D00389937 /* CreditCoop+Values.h */,
+				3738993A1B63130E00389937 /* CreditCoop+Values.m */,
 				37A437BE166BF0AA006A51E3 /* Model */,
 				37A4379E166BEADE006A51E3 /* Utility */,
 				37A43744166BE850006A51E3 /* Supporting Files */,
@@ -202,6 +207,7 @@
 				37A437A1166BEAF1006A51E3 /* CreditCoop.m in Sources */,
 				370753181B6302CA00150427 /* CreditCoop+ViewModels.m in Sources */,
 				37A437C5166BF284006A51E3 /* NSManagedObject+COOMapping.m in Sources */,
+				3738993B1B63130E00389937 /* CreditCoop+Values.m in Sources */,
 				3792AE381B5272CC006BE1E9 /* CreditCoop+Model.m in Sources */,
 				37A437EE166C0014006A51E3 /* LoginVC.m in Sources */,
 			);
