@@ -36,7 +36,7 @@
         type = @"cheque";
         cleanName = [label1Scanner.string substringFromIndex:label1Scanner.scanLocation];
     } else if ([label1Scanner scanString:@"VIR SEPA " intoString:nil]) {
-        type = @"prelevement";
+        type = @"virement";
         [label1Scanner scanString:@"EMET : " intoString:nil];
         cleanName = [label1Scanner.string substringFromIndex:label1Scanner.scanLocation];
     } else if ([label1Scanner scanString:@"PRLV SEPA " intoString:nil]) {
