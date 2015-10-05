@@ -4,7 +4,9 @@
 typedef void (^MappingHandler)(NSManagedObject*, id);
 typedef NSDictionary<NSString *,MappingHandler> MappingDictionary;
 
-#define SIMPLEMAPPING(attributename_) (^(NSManagedObject* object, id value){[object setValue:value forKey:(attributename_)];})
+MappingHandler COOSimpleMapping(NSString* attributename_) {
+    return ^(NSManagedObject* object, id value){[object setValue:value forKey:(attributename_)];};
+}
 
 @interface NSManagedObject (COOMapping)
 + (MappingDictionary *)coomapping;
@@ -25,17 +27,17 @@ typedef NSDictionary<NSString *,MappingHandler> MappingDictionary;
 @implementation COOUser (COOMapping)
 + (MappingDictionary *)coomapping
 {
-    return @{ @"mail" : SIMPLEMAPPING(@"email"),
-              @"label" : SIMPLEMAPPING(@"label"),
-              @"lastConnectionDate" : SIMPLEMAPPING(@"lastConnectionDate")};
+    return @{ @"mail" : COOSimpleMapping(@"email"),
+              @"label" : COOSimpleMapping(@"label"),
+              @"lastConnectionDate" : COOSimpleMapping(@"lastConnectionDate")};
 }
 @end
 
 @implementation COOAccount (COOMapping)
 + (MappingDictionary *)coomapping
 {
-    return @{@"accountNumber" : SIMPLEMAPPING(@"number"),
-             @"balance" : SIMPLEMAPPING(@"balance"),
+    return @{@"accountNumber" : COOSimpleMapping(@"number"),
+             @"balance" : COOSimpleMapping(@"balance"),
              @"balanceDate" : ^(NSManagedObject* object, id value){
                  static NSDateFormatter * formatter;
                  static dispatch_once_t onceToken;
@@ -45,8 +47,8 @@ typedef NSDictionary<NSString *,MappingHandler> MappingDictionary;
                  });
                  [object setValue:[formatter dateFromString:value] forKey:@"balanceDate"];
              },
-             @"category" : SIMPLEMAPPING(@"category"),
-             @"label" : SIMPLEMAPPING(@"label"),
+             @"category" : COOSimpleMapping(@"category"),
+             @"label" : COOSimpleMapping(@"label"),
              };
 }
 @end
@@ -54,9 +56,9 @@ typedef NSDictionary<NSString *,MappingHandler> MappingDictionary;
 @implementation COOOperation (COOMapping)
 + (MappingDictionary *) coomapping
 {
-    return @{@"operationAmountSign" : SIMPLEMAPPING(@"amount"),
-             @"operationLabel1" : SIMPLEMAPPING(@"label1"),
-             @"operationLabel2" : SIMPLEMAPPING(@"label2"),
+    return @{@"operationAmountSign" : COOSimpleMapping(@"amount"),
+             @"operationLabel1" : COOSimpleMapping(@"label1"),
+             @"operationLabel2" : COOSimpleMapping(@"label2"),
              @"operationDate" : ^(NSManagedObject* object, id value){
                  static NSDateFormatter * formatter;
                  static dispatch_once_t onceToken;
