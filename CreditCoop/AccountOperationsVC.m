@@ -2,6 +2,8 @@
 #import "CreditCoop+Model.h"
 #import "CreditCoop+ViewModels.h"
 
+#import "CreditCoop+Days.h"
+
 #pragma mark AccountOperationCell
 
 @interface AccountOperationCell : UITableViewCell
@@ -16,7 +18,10 @@
 #pragma mark AccountOperationsVC
 
 @implementation AccountOperationsVC
-
+{
+    COOAccount * _account;
+    COOOperation * _referenceOperation; // When searching
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,16 +35,26 @@
         return;
     }
     
+    _account = account_;
+
+    [_account makeDays];
+    [_account.managedObjectContext save:NULL];
+
+    NSDictionary * vm = _account.viewModel;
+    self.title = vm[@"subtitle"];
+    
     [self setEntityName:@"Operation"
-                context:account_.managedObjectContext
-              predicate:[NSPredicate predicateWithFormat:@"%K == %@",@"account", account_]
+                context:_account.managedObjectContext
+              predicate:[self predicate]
         sortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO],
                           [[NSSortDescriptor alloc] initWithKey:@"amount" ascending:NO]]
      sectionNameKeyPath:@"date"
     cellReuseIdentifier:@"AccountOperationCell"];
-    
-    NSDictionary * vm = account_.viewModel;
-    self.title = vm[@"subtitle"];
+}
+
+- (NSPredicate*) predicate
+{
+    return [NSPredicate predicateWithFormat:@"%K == %@",@"account", _account];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section_
@@ -56,6 +71,25 @@
     cell_.detailLabel.text = vm[@"subtitle"];
     cell_.amountLabel.text = vm[@"amount"];
     cell_.amountLabel.textColor = vm[@"amountColor"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [NSFetchedResultsController deleteCacheWithName:nil];
+    if(_referenceOperation==nil) {
+        _referenceOperation = [self.frc objectAtIndexPath:indexPath];
+        self.frc.fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[[self predicate],
+                                                                                               [NSPredicate predicateWithFormat:@"%K == %@",@"attributes.cleanName", _referenceOperation.attributes.cleanName]]];
+    } else {
+        _referenceOperation = nil;
+        self.frc.fetchRequest.predicate = [self predicate];
+    }
+    
+    
+    NSError * error;
+    __unused BOOL ok = [self.frc performFetch:&error];
+    NSAssert(ok, @"Fetch failed : %@",error);
+    [self.tableView reloadData];
 }
 
 @end
