@@ -41,7 +41,9 @@
 @end
 
 @interface COODay : NSManagedObject
-@property (nonatomic, strong) NSDecimalNumber* balance;
 @property (nonatomic, strong) NSDate* date;
 @property (nonatomic, strong) NSSet<COOOperation*> *operations;
+@property (nonatomic, strong) NSDecimalNumber* balance;
+@property (nonatomic, strong) NSDecimalNumber* periodicSpending;
+@property (nonatomic, strong) NSDecimalNumber* periodicCash;
 @end

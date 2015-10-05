@@ -17,5 +17,5 @@
 @end
 
 @implementation COODay
-@dynamic balance, date, operations;
+@dynamic date, operations, balance, periodicSpending, periodicCash;
 @end
