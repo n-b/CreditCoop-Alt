@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSDate* date;
 @property (nonatomic, strong) NSString* label1;
 @property (nonatomic, strong) NSString* label2;
+@property (nonatomic) BOOL visibility;
 @property (nonatomic, strong) COOAccount *account;
 @property (nonatomic, strong) COOOperationAttributes *attributes;
 @property (nonatomic, strong) COODay *day;

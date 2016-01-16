@@ -9,7 +9,7 @@
 @end
 
 @implementation COOOperation
-@dynamic amount, date, label1, label2, account, attributes, day;
+@dynamic amount, date, label1, label2, visibility, account, attributes, day;
 @end
 
 @implementation COOOperationAttributes

@@ -46,15 +46,16 @@
     [self setEntityName:@"Operation"
                 context:_account.managedObjectContext
               predicate:[self predicate]
-        sortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO],
-                          [[NSSortDescriptor alloc] initWithKey:@"amount" ascending:NO]]
+        sortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"visibility" ascending:NO],
+                          [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO],
+                          [NSSortDescriptor sortDescriptorWithKey:@"amount" ascending:NO]]
      sectionNameKeyPath:@"date"
     cellReuseIdentifier:@"AccountOperationCell"];
 }
 
 - (NSPredicate*) predicate
 {
-    return [NSPredicate predicateWithFormat:@"%K == %@",@"account", _account];
+    return [NSPredicate predicateWithFormat:@"%K == %@ AND %K == %@",@"account", _account, @"visibility", @YES];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section_
@@ -75,21 +76,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [NSFetchedResultsController deleteCacheWithName:nil];
     if(_referenceOperation==nil) {
         _referenceOperation = [self.frc objectAtIndexPath:indexPath];
-        self.frc.fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[[self predicate],
-                                                                                               [NSPredicate predicateWithFormat:@"%K == %@",@"attributes.cleanName", _referenceOperation.attributes.cleanName]]];
     } else {
         _referenceOperation = nil;
-        self.frc.fetchRequest.predicate = [self predicate];
     }
     
+    NSString * searchedOperation = _referenceOperation.attributes.cleanName;
+    for (COOOperation* operation in _account.operations) {
+        operation.visibility = searchedOperation ? [operation.attributes.cleanName isEqualToString:searchedOperation] : YES;
+    }
     
-    NSError * error;
-    __unused BOOL ok = [self.frc performFetch:&error];
-    NSAssert(ok, @"Fetch failed : %@",error);
-    [self.tableView reloadData];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15B22c" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F28b" minimumToolsVersion="Automatic">
     <entity name="Account" representedClassName="COOAccount" syncable="YES">
         <attribute name="balance" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="balanceDate" attributeType="Date" syncable="YES"/>
@@ -21,6 +21,7 @@
         <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="label1" attributeType="String" syncable="YES"/>
         <attribute name="label2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="visibility" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <relationship name="account" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="operations" inverseEntity="Account" syncable="YES"/>
         <relationship name="attributes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OperationAttributes" inverseName="operation" inverseEntity="OperationAttributes" syncable="YES"/>
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="operations" inverseEntity="Day" syncable="YES"/>
@@ -44,7 +45,7 @@
     <elements>
         <element name="Account" positionX="0" positionY="0" width="128" height="150"/>
         <element name="Day" positionX="-9" positionY="63" width="128" height="120"/>
-        <element name="Operation" positionX="196" positionY="15" width="128" height="150"/>
+        <element name="Operation" positionX="196" positionY="15" width="128" height="165"/>
         <element name="OperationAttributes" positionX="9" positionY="81" width="128" height="165"/>
         <element name="User" positionX="-218" positionY="45" width="128" height="103"/>
     </elements>
