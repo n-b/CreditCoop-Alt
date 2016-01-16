@@ -8,7 +8,7 @@
 }
 @end
 
-@interface UITextField (More)
+@interface UITextField (MoreOutlets)
 @property(nullable, nonatomic,strong) IBOutlet UIView *rightView;
 @end
 
@@ -60,6 +60,7 @@
 {
     NSString * userCode = _userCodeField.text;
     NSString * sesame = _sesameField.text;
+    _userCodeField.enabled = _sesameField.enabled = NO;
     [self.creditcoop loginWithUserCode:userCode sesame:sesame completion:^(NSError * __nullable error) {
         if(error==nil) {
             [NSUserDefaults.standardUserDefaults setObject:userCode forKey:@"CreditCoop.Login.userCode"];
@@ -69,6 +70,7 @@
         } else {
             [self presentError:error];
         }
+        _userCodeField.enabled = _sesameField.enabled = YES;
     }];
 }
 
