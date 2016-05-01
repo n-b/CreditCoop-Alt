@@ -8,13 +8,12 @@
 
 - (void)logout
 {
-    [self willChangeValueForKey:@"user"];
     COOUser * user = [self user];
     if(user)
         [self.moc deleteObject:user]; // cascades to accounts and operations
     [self save:NULL];
-    [self didChangeValueForKey:@"user"];
     [self clearCookies];    
+    self.loginStatus = CreditCoopLoginStatusNone;
 }
 
 - (void)loginWithUserCode:(NSString* __nonnull)userCode_
