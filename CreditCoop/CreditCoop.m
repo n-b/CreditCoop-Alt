@@ -72,6 +72,12 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
     if(error_) return error_;
     if(data_.length==0) return [NSError errorWithDomain:@"COO" code:1 userInfo:nil];
     id dict = [NSJSONSerialization JSONObjectWithData:data_ options:0 error:&error_];
+    if(dict==nil && error_.domain == NSCocoaErrorDomain && error_.code == NSPropertyListReadCorruptError) {
+        error_ = nil;
+        NSString * text = [[NSString alloc] initWithData:data_ encoding:NSISOLatin1StringEncoding];
+        NSData * goodData = [text dataUsingEncoding:NSUTF8StringEncoding];
+        dict = [NSJSONSerialization JSONObjectWithData:goodData options:0 error:&error_];
+    }
     if(error_) return error_;
     if(dict==nil) return [NSError errorWithDomain:@"COO" code:2 userInfo:nil];
     NSArray* errors = dict[@"errors"];
@@ -95,7 +101,7 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
                    sesame:(NSString* __nonnull)sesame_
                completion:(CompletionBlock __nonnull)completion_
 {
-    [self makeRequest:@"banque/mob/json/user/sesamAuthenticate.action"
+    [self makeRequest:@"banque/mob2/json/user/sesamAuthenticate.action"
         withArguments:@{@"userCode":userCode_,
                         @"sesam":sesame_}
               parsing:^NSError *(NSDictionary * __nonnull dict) {
@@ -124,7 +130,7 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
 
 - (void)refreshAccount:(COOAccount* __nonnull)account_ completion:(CompletionBlock __nonnull)completion_;
 {
-    [self makeRequest:@"banque/mob/json/account/detail.action"
+    [self makeRequest:@"banque/mob2/json/account/detail.action"
         withArguments:@{@"accountNumber":account_.number,
                         @"beginIndex":@"0", @"endIndex":@"250"}
               parsing:^NSError*(NSDictionary * __nonnull dict) {
