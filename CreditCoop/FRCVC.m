@@ -15,7 +15,7 @@
 - (void)setEntityName:(NSString*)entityName_
               context:(NSManagedObjectContext*)context_
             predicate:(NSPredicate*)predicate_
-      sortDescriptors:(NSArray*)sortDescriptors_
+      sortDescriptors:(NSArray<NSSortDescriptor*>*)sortDescriptors_
    sectionNameKeyPath:(NSString*)sectionNameKeyPath_
   cellReuseIdentifier:(NSString*)cellReuseIdentifier_
 {

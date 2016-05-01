@@ -40,7 +40,7 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
 }
 
 - (void)makeRequest:(NSString*__nonnull)path_
-      withArguments:(NSDictionary*__nonnull)queryParams
+      withArguments:(NSDictionary<NSString*,NSString*>*__nonnull)queryParams
             parsing:(ParsingBlock __nonnull)parsing_
          completion:(CompletionBlock __nonnull)completion_
 {

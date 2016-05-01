@@ -35,8 +35,8 @@
     [self setEntityName:@"Account"
                 context:user_.managedObjectContext
               predicate:[NSPredicate predicateWithFormat:@"%K == %@",@"user", user_]
-        sortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"category" ascending:YES],
-                          [[NSSortDescriptor alloc] initWithKey:@"number" ascending:YES]]
+        sortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"category" ascending:YES],
+                          [NSSortDescriptor sortDescriptorWithKey:@"number" ascending:YES]]
      sectionNameKeyPath:@"category"
     cellReuseIdentifier:@"UserAccountCell"];
     
