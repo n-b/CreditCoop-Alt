@@ -63,8 +63,8 @@
       newIndexPath:(NSIndexPath *)newIndexPath_
 {
     switch(type_) {
-        case NSFetchedResultsChangeInsert: [self.tableView insertRowsAtIndexPaths:@[newIndexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
-        case NSFetchedResultsChangeDelete: [self.tableView deleteRowsAtIndexPaths:@[indexPath_] withRowAnimation:UITableViewRowAnimationFade]; break;
+        case NSFetchedResultsChangeInsert: [self.tableView insertRowsAtIndexPaths:@[newIndexPath_] withRowAnimation:UITableViewRowAnimationAutomatic]; break;
+        case NSFetchedResultsChangeDelete: [self.tableView deleteRowsAtIndexPaths:@[indexPath_] withRowAnimation:UITableViewRowAnimationAutomatic]; break;
 //        case NSFetchedResultsChangeUpdate: [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath_] withObject:[_frc objectAtIndexPath:indexPath_]]; break;
         case NSFetchedResultsChangeMove: [self.tableView moveRowAtIndexPath:indexPath_ toIndexPath:newIndexPath_]; break;
     }
