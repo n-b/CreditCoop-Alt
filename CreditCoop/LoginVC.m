@@ -1,4 +1,5 @@
 #import "LoginVC.h"
+#import "UIViewController+PresentError.h"
 
 
 @implementation UIControl (FirstResponderIBAction)
@@ -22,23 +23,11 @@
 }
 @end
 
-@implementation UIViewController (PresentError)
-- (void)presentError:(NSError*)error_
-{
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:error_.localizedDescription message:nil preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
-}
-@end
-
-
 @implementation LoginVC
 {
     IBOutlet UITextField * _userCodeField;
     IBOutlet UITextField * _sesameField;
+    IBOutlet UIActivityIndicatorView *_loginIndicator;
 }
 
 - (void)viewDidLoad
@@ -54,6 +43,8 @@
 #if DEBUG
     _sesameField.text = [NSUserDefaults.standardUserDefaults stringForKey:@"CreditCoop.Debug.Login.sesame"];
 #endif
+    
+    [self.creditcoop addObserver:self forKeyPath:@"loginStatus" options:NSKeyValueObservingOptionInitial context:__FILE__];
 }
 
 - (IBAction)login
@@ -64,14 +55,31 @@
     [self.creditcoop loginWithUserCode:userCode sesame:sesame completion:^(NSError * __nullable error) {
         if(error==nil) {
             [NSUserDefaults.standardUserDefaults setObject:userCode forKey:@"CreditCoop.Login.userCode"];
-            [self.creditcoop refreshAllAccounts:^(NSError * __nullable error) {
-                [self presentError:error];
-            }];
         } else {
             [self presentError:error];
         }
         _userCodeField.enabled = _sesameField.enabled = YES;
     }];
+}
+
+- (void)updateLoginIndicator
+{
+    if(self.creditcoop.loginStatus == CreditCoopLoginStatusConnecting) {
+        [_loginIndicator startAnimating];
+    } else {
+        [_loginIndicator stopAnimating];
+    }
+}
+
+// MARK: KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath_ ofObject:(id)object_ change:(NSDictionary *)change_ context:(void *)context_
+{
+    if (context_==__FILE__) {
+        [self updateLoginIndicator];
+    } else {
+        [super observeValueForKeyPath:keyPath_ ofObject:object_ change:change_ context:context_];
+    }
 }
 
 @end

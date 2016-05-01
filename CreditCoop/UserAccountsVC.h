@@ -1,8 +1,7 @@
-#import "CreditCoop+Model.h"
 #import "FRCVC.h"
 
+@class CreditCoop;
 @interface UserAccountsVC : FRCVC
-
-- (void) setUser:(COOUser*)user_;
+@property CreditCoop * creditcoop;
 
 @end

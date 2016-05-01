@@ -12,8 +12,8 @@ typedef void(^CompletionBlock)(NSError*__nullable error);
 typedef NS_ENUM(NSInteger, CreditCoopLoginStatus)
 {
     CreditCoopLoginStatusNone,
-    CreditCoopLoginStatusInProgress,
-    CreditCoopLoginStatusLogged,
+    CreditCoopLoginStatusConnecting,
+    CreditCoopLoginStatusConnected,
 };
 @property CreditCoopLoginStatus loginStatus;
 

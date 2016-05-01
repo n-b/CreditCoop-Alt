@@ -26,7 +26,7 @@ int main(int argc_, char *argv_[])
     LoginVC *controller = (LoginVC *)navigationController.topViewController;
     controller.creditcoop = self.creditcoop;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.creditcoop addObserver:self forKeyPath:@"user" options:NSKeyValueObservingOptionInitial context:__FILE__];
+        [self.creditcoop addObserver:self forKeyPath:@"loginStatus" options:NSKeyValueObservingOptionInitial context:__FILE__];
     });
     return YES;
 }
@@ -38,14 +38,16 @@ int main(int argc_, char *argv_[])
 
 - (void)setLoginVisibleAnimated:(BOOL)animated_
 {
-    if(self.creditcoop.user) {
+    if(self.creditcoop.loginStatus==CreditCoopLoginStatusConnected) {
         UINavigationController * accountsNavC = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"UserAccounts"];
-        ((UserAccountsVC*)accountsNavC.visibleViewController).user = self.creditcoop.user;
+        ((UserAccountsVC*)accountsNavC.visibleViewController).creditcoop = self.creditcoop;
         [self.window.rootViewController presentViewController:accountsNavC animated:animated_ completion:nil];
     } else {
         [self.window.rootViewController dismissViewControllerAnimated:animated_ completion:nil];
     }
 }
+
+// MARK: KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath_ ofObject:(id)object_ change:(NSDictionary *)change_ context:(void *)context_
 {

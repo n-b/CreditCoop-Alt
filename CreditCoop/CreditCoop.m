@@ -6,6 +6,15 @@
 
 @implementation CreditCoop
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.loginStatus = (self.user != nil) ? CreditCoopLoginStatusConnected : CreditCoopLoginStatusNone;
+    }
+    return self;
+}
+
 - (void)logout
 {
     COOUser * user = [self user];
@@ -20,6 +29,7 @@
                    sesame:(NSString* __nonnull)sesame_
                completion:(CompletionBlock __nonnull)completion_
 {
+    self.loginStatus = CreditCoopLoginStatusConnecting;
     [self makeRequest:@"banque/mob2/json/user/sesamAuthenticate.action"
         withArguments:@{@"userCode":userCode_,
                         @"sesam":sesame_}
@@ -29,7 +39,6 @@
                       return [NSError errorWithDomain:@"COO" code:4 userInfo:nil];
                   }
                   
-                  [self willChangeValueForKey:@"user"];
                   
                   COOUser * user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.moc];
                   [user coo_importValues:userDict];
@@ -44,7 +53,14 @@
                   [self didChangeValueForKey:@"user"];
                   return nil;
               }
-           completion:completion_];
+           completion:^(NSError * _Nullable error) {
+               completion_(error);
+               if(!error && self.user) {
+                   self.loginStatus = CreditCoopLoginStatusConnected;
+               } else {
+                   [self logout];
+               }
+           }];
 }
 
 - (void)refreshAccount:(COOAccount* __nonnull)account_ completion:(CompletionBlock __nonnull)completion_;

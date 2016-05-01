@@ -1,5 +1,9 @@
 #import "UserAccountsVC.h"
 #import "AccountOperationsVC.h"
+#import "UIViewController+PresentError.h"
+
+#import "CreditCoop.h"
+#import "CreditCoop+Requests.h"
 #import "CreditCoop+Model.h"
 #import "CreditCoop+ViewModels.h"
 
@@ -24,9 +28,17 @@
     [super viewDidLoad];
     self.tableView.estimatedRowHeight = 69;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    [self.creditcoop refreshAllAccounts:^(NSError * __nullable error) {
+        if(error) {
+            [self presentError:error];
+        }
+    }];
+
+    [self configureForUser:self.creditcoop.user];
 }
 
-- (void) setUser:(COOUser *)user_
+- (void)configureForUser:(COOUser *)user_
 {
     if (nil==user_) {
         return;
